@@ -38,12 +38,8 @@ namespace AutoShop.List.Autoriz
 
                     if (count > 0)
                     {
-                        /*
-                        // Если существует запись с таким username, выведите сообщение об ошибке
-                        error.Text = "Имя занято";
-                        Username.ForeColor = Color.Red;
-                        error.ForeColor = Color.Black;
-                        */
+                        // имя занято
+                        MessageBox.Show("Имя занято");
                     }
                     else
                     {
@@ -57,27 +53,61 @@ namespace AutoShop.List.Autoriz
                             command.Parameters.AddWithValue("@password", passwordBox.Text);
 
                             command.ExecuteNonQuery();
-                            /*
-                            notification.Close();
-                            Properties.Settings.Default.succes = "Регистрация успешна!";
-                            Properties.Settings.Default.Save();
-                            Succes succes = new Succes();
-                            succes.Show();
-                            */
 
-                            List.Autoriz.LoginForm login = new List.Autoriz.LoginForm();
-                            this.Close();
-                            login.Show();
+                            // успешно
+                            MessageBox.Show("Регистрация успешна");
+
                             /*
-                            error.Text = "Регистрация успешна!";
-                            error.ForeColor = Color.Green;
-                            Password.ForeColor = Color.Black;
-                            Username.ForeColor = Color.Black;
-                            */
+                            List.Autoriz.RegistrationForm registr = new List.Autoriz.RegistrationForm();
+                            this.Hide();
+                            registr.Show();
+                               */
                         }
                     }
                 }
+                connection.Close();
             }
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void sverBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private bool isDragging = false;
+        private Point offset;
+        private void guna2Panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            isDragging = true;
+            offset = new Point(e.X, e.Y);
+        }
+
+        private void guna2Panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                Point newLocation = this.Location;
+                newLocation.X += e.X - offset.X;
+                newLocation.Y += e.Y - offset.Y;
+                this.Location = newLocation;
+            }
+        }
+
+        private void guna2Panel2_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDragging = false;
+        }
+
+        private void loginBtn_Click(object sender, EventArgs e)
+        {
+            List.Autoriz.RegistrationForm registr = new List.Autoriz.RegistrationForm();
+            this.Hide();
+            registr.Show();
         }
     }
 }

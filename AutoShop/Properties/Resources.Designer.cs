@@ -63,6 +63,16 @@ namespace AutoShop.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_cancel_753345 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-cancel-753345", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_email_envelope_12439139 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-email-envelope-12439139", resourceCulture);
@@ -76,6 +86,16 @@ namespace AutoShop.Properties {
         internal static System.Drawing.Bitmap free_icon_google_glass_logo_60786 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-google-glass-logo-60786", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_minimize_video_9922060 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-minimize-video-9922060", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
