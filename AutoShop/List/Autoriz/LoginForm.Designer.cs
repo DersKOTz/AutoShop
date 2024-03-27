@@ -61,7 +61,7 @@
             nameBox = new Guna.UI2.WinForms.Guna2TextBox();
             googleBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             label3 = new Label();
-            toolTip1 = new ToolTip(components);
+            notifyIcon1 = new NotifyIcon(components);
             guna2Panel1.SuspendLayout();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)sverBtn).BeginInit();
@@ -86,16 +86,17 @@
             guna2Panel1.CustomizableEdges = customizableEdges16;
             guna2Panel1.Dock = DockStyle.Left;
             guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Margin = new Padding(3, 2, 3, 2);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            guna2Panel1.Size = new Size(444, 768);
+            guna2Panel1.Size = new Size(388, 576);
             guna2Panel1.TabIndex = 0;
             // 
             // loginBtn
             // 
             loginBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             loginBtn.BorderColor = Color.White;
-            loginBtn.BorderRadius = 35;
+            loginBtn.BorderRadius = 25;
             loginBtn.BorderThickness = 3;
             loginBtn.CustomizableEdges = customizableEdges14;
             loginBtn.DisabledState.BorderColor = Color.DarkGray;
@@ -105,10 +106,11 @@
             loginBtn.FillColor = Color.Empty;
             loginBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             loginBtn.ForeColor = Color.White;
-            loginBtn.Location = new Point(98, 449);
+            loginBtn.Location = new Point(86, 337);
+            loginBtn.Margin = new Padding(3, 2, 3, 2);
             loginBtn.Name = "loginBtn";
             loginBtn.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            loginBtn.Size = new Size(249, 73);
+            loginBtn.Size = new Size(218, 55);
             loginBtn.TabIndex = 2;
             loginBtn.Text = "ВОЙТИ";
             loginBtn.Click += loginBtn_Click;
@@ -118,9 +120,9 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.Font = new Font("Segoe UI", 15F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(6, 318);
+            label2.Location = new Point(5, 238);
             label2.Name = "label2";
-            label2.Size = new Size(432, 128);
+            label2.Size = new Size(378, 96);
             label2.TabIndex = 1;
             label2.Text = "Чтобы поддерживать с нами связь, пожалуйста войдите в систему,\r\nуказав свои личные данные";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -131,9 +133,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 30F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(41, 238);
+            label1.Location = new Point(36, 178);
             label1.Name = "label1";
-            label1.Size = new Size(363, 67);
+            label1.Size = new Size(288, 54);
             label1.TabIndex = 0;
             label1.Text = "Welcome Back!";
             // 
@@ -144,10 +146,11 @@
             guna2Panel2.Controls.Add(closeBtn);
             guna2Panel2.CustomizableEdges = customizableEdges12;
             guna2Panel2.Dock = DockStyle.Top;
-            guna2Panel2.Location = new Point(444, 0);
+            guna2Panel2.Location = new Point(388, 0);
+            guna2Panel2.Margin = new Padding(3, 2, 3, 2);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            guna2Panel2.Size = new Size(854, 68);
+            guna2Panel2.Size = new Size(748, 51);
             guna2Panel2.TabIndex = 1;
             guna2Panel2.MouseDown += guna2Panel2_MouseDown;
             guna2Panel2.MouseMove += guna2Panel2_MouseMove;
@@ -157,9 +160,10 @@
             // 
             sverBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             sverBtn.Image = Properties.Resources.free_icon_minimize_video_9922060;
-            sverBtn.Location = new Point(732, 10);
+            sverBtn.Location = new Point(647, 8);
+            sverBtn.Margin = new Padding(3, 2, 3, 2);
             sverBtn.Name = "sverBtn";
-            sverBtn.Size = new Size(50, 50);
+            sverBtn.Size = new Size(44, 38);
             sverBtn.SizeMode = PictureBoxSizeMode.Zoom;
             sverBtn.TabIndex = 10;
             sverBtn.TabStop = false;
@@ -169,9 +173,10 @@
             // 
             closeBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             closeBtn.Image = Properties.Resources.free_icon_cancel_753345;
-            closeBtn.Location = new Point(794, 11);
+            closeBtn.Location = new Point(696, 8);
+            closeBtn.Margin = new Padding(3, 2, 3, 2);
             closeBtn.Name = "closeBtn";
-            closeBtn.Size = new Size(48, 48);
+            closeBtn.Size = new Size(42, 36);
             closeBtn.SizeMode = PictureBoxSizeMode.Zoom;
             closeBtn.TabIndex = 9;
             closeBtn.TabStop = false;
@@ -188,14 +193,16 @@
             guna2Panel3.Controls.Add(label3);
             guna2Panel3.CustomizableEdges = customizableEdges10;
             guna2Panel3.Dock = DockStyle.Fill;
-            guna2Panel3.Location = new Point(444, 68);
+            guna2Panel3.Location = new Point(388, 51);
+            guna2Panel3.Margin = new Padding(3, 2, 3, 2);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            guna2Panel3.Size = new Size(854, 700);
+            guna2Panel3.Size = new Size(748, 525);
             guna2Panel3.TabIndex = 2;
             // 
             // passwordBox
             // 
+            passwordBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             passwordBox.BorderColor = Color.Black;
             passwordBox.BorderRadius = 25;
             passwordBox.CustomizableEdges = customizableEdges1;
@@ -210,18 +217,21 @@
             passwordBox.IconLeft = Properties.Resources.free_icon_password_1000966;
             passwordBox.IconLeftOffset = new Point(5, 0);
             passwordBox.IconLeftSize = new Size(50, 50);
-            passwordBox.Location = new Point(239, 452);
-            passwordBox.Margin = new Padding(7);
+            passwordBox.Location = new Point(209, 339);
+            passwordBox.Margin = new Padding(6, 5, 6, 5);
             passwordBox.Name = "passwordBox";
             passwordBox.PasswordChar = '\0';
             passwordBox.PlaceholderText = "";
             passwordBox.SelectedText = "";
             passwordBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            passwordBox.Size = new Size(371, 73);
+            passwordBox.Size = new Size(325, 55);
             passwordBox.TabIndex = 8;
+            passwordBox.MouseEnter += passwordBox_MouseEnter;
+            passwordBox.MouseLeave += passwordBox_MouseLeave;
             // 
             // emailBox
             // 
+            emailBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             emailBox.BorderColor = Color.Black;
             emailBox.BorderRadius = 25;
             emailBox.CustomizableEdges = customizableEdges3;
@@ -236,22 +246,24 @@
             emailBox.IconLeft = Properties.Resources.free_icon_email_envelope_12439139;
             emailBox.IconLeftOffset = new Point(5, 0);
             emailBox.IconLeftSize = new Size(47, 47);
-            emailBox.Location = new Point(239, 365);
-            emailBox.Margin = new Padding(7);
+            emailBox.Location = new Point(209, 274);
+            emailBox.Margin = new Padding(6, 5, 6, 5);
             emailBox.Name = "emailBox";
             emailBox.PasswordChar = '\0';
             emailBox.PlaceholderText = "";
             emailBox.SelectedText = "";
             emailBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            emailBox.Size = new Size(371, 73);
+            emailBox.Size = new Size(325, 55);
             emailBox.TabIndex = 7;
+            emailBox.MouseEnter += emailBox_MouseEnter;
+            emailBox.MouseLeave += emailBox_MouseLeave;
             // 
             // registrationBtn
             // 
             registrationBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             registrationBtn.BackColor = Color.White;
             registrationBtn.BorderColor = Color.FromArgb(193, 193, 193);
-            registrationBtn.BorderRadius = 35;
+            registrationBtn.BorderRadius = 25;
             registrationBtn.CustomBorderColor = Color.Red;
             registrationBtn.CustomizableEdges = customizableEdges5;
             registrationBtn.DisabledState.BorderColor = Color.DarkGray;
@@ -261,20 +273,22 @@
             registrationBtn.FillColor = Color.FromArgb(58, 179, 153);
             registrationBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             registrationBtn.ForeColor = Color.White;
-            registrationBtn.Location = new Point(303, 560);
+            registrationBtn.Location = new Point(265, 420);
+            registrationBtn.Margin = new Padding(3, 2, 3, 2);
             registrationBtn.Name = "registrationBtn";
             registrationBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            registrationBtn.Size = new Size(249, 73);
+            registrationBtn.Size = new Size(219, 55);
             registrationBtn.TabIndex = 6;
             registrationBtn.Text = "Регистрация";
             registrationBtn.Click += registration_Click;
             // 
             // nameBox
             // 
+            nameBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             nameBox.BorderColor = Color.Black;
             nameBox.BorderRadius = 25;
             nameBox.CustomizableEdges = customizableEdges7;
-            nameBox.DefaultText = "Name";
+            nameBox.DefaultText = "Username";
             nameBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             nameBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             nameBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -285,15 +299,17 @@
             nameBox.IconLeft = Properties.Resources.free_icon_user_account_9372916;
             nameBox.IconLeftOffset = new Point(5, 0);
             nameBox.IconLeftSize = new Size(50, 50);
-            nameBox.Location = new Point(239, 278);
-            nameBox.Margin = new Padding(7);
+            nameBox.Location = new Point(209, 208);
+            nameBox.Margin = new Padding(6, 5, 6, 5);
             nameBox.Name = "nameBox";
             nameBox.PasswordChar = '\0';
             nameBox.PlaceholderText = "";
             nameBox.SelectedText = "";
             nameBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            nameBox.Size = new Size(371, 73);
+            nameBox.Size = new Size(325, 55);
             nameBox.TabIndex = 3;
+            nameBox.MouseEnter += nameBox_MouseEnter;
+            nameBox.MouseLeave += nameBox_MouseLeave;
             // 
             // googleBtn
             // 
@@ -308,11 +324,12 @@
             googleBtn.FillColor = Color.White;
             googleBtn.Font = new Font("Segoe UI", 9F);
             googleBtn.ForeColor = Color.White;
-            googleBtn.Location = new Point(402, 196);
+            googleBtn.Location = new Point(351, 146);
+            googleBtn.Margin = new Padding(3, 2, 3, 2);
             googleBtn.Name = "googleBtn";
             googleBtn.ShadowDecoration.CustomizableEdges = customizableEdges9;
             googleBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            googleBtn.Size = new Size(50, 50);
+            googleBtn.Size = new Size(45, 38);
             googleBtn.TabIndex = 2;
             googleBtn.Text = "guna2CircleButton1";
             googleBtn.Visible = false;
@@ -323,23 +340,30 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 30F);
             label3.ForeColor = Color.FromArgb(58, 179, 153);
-            label3.Location = new Point(229, 115);
+            label3.Location = new Point(214, 80);
             label3.Name = "label3";
-            label3.Size = new Size(397, 67);
+            label3.Size = new Size(316, 54);
             label3.TabIndex = 1;
             label3.Text = "Создать аккаунт";
             // 
+            // notifyIcon1
+            // 
+            notifyIcon1.Text = "notifyIcon1";
+            notifyIcon1.Visible = true;
+            // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1298, 768);
+            ClientSize = new Size(1136, 576);
             Controls.Add(guna2Panel3);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
@@ -366,8 +390,8 @@
         private Guna.UI2.WinForms.Guna2Button registrationBtn;
         private Guna.UI2.WinForms.Guna2TextBox passwordBox;
         private Guna.UI2.WinForms.Guna2TextBox emailBox;
-        private ToolTip toolTip1;
         private PictureBox sverBtn;
         private PictureBox closeBtn;
+        private NotifyIcon notifyIcon1;
     }
 }

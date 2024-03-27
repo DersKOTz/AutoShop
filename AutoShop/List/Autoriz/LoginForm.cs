@@ -22,6 +22,16 @@ namespace AutoShop.List.Autoriz
             InitializeComponent();
         }
 
+        void notify(string notifyText)
+        {
+            notifyIcon1.Icon = SystemIcons.Question; // car
+            // notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
+            notifyIcon1.BalloonTipTitle = "AutoShop";
+            notifyIcon1.BalloonTipText = notifyText;
+            notifyIcon1.Visible = true;
+            notifyIcon1.ShowBalloonTip(3000);
+        }
+
         private void registration_Click(object sender, EventArgs e)
         {
             string connectionString = "Data Source=LAPTOPVALAVIN-K\\SQLEXPRESS;Initial Catalog=AutoShop;Integrated Security=True;";
@@ -39,7 +49,7 @@ namespace AutoShop.List.Autoriz
                     if (count > 0)
                     {
                         // имя занято
-                        MessageBox.Show("Имя занято");
+                        notify("Имя занято! Пожалуйста выберите другое");
                     }
                     else
                     {
@@ -51,17 +61,15 @@ namespace AutoShop.List.Autoriz
                             command.Parameters.AddWithValue("@name", nameBox.Text);
                             command.Parameters.AddWithValue("@email", emailBox.Text);
                             command.Parameters.AddWithValue("@password", passwordBox.Text);
-
                             command.ExecuteNonQuery();
 
                             // успешно
-                            MessageBox.Show("Регистрация успешна");
+                            notify("Регистрация прошла успешно!");
 
-                            /*
                             List.Autoriz.RegistrationForm registr = new List.Autoriz.RegistrationForm();
                             this.Hide();
                             registr.Show();
-                               */
+
                         }
                     }
                 }
@@ -108,6 +116,55 @@ namespace AutoShop.List.Autoriz
             List.Autoriz.RegistrationForm registr = new List.Autoriz.RegistrationForm();
             this.Hide();
             registr.Show();
+        }
+
+
+        private void nameBox_MouseEnter(object sender, EventArgs e)
+        {
+            if (nameBox.Text == "Username")
+            {
+                nameBox.Text = "";
+            }
+        }
+
+        private void nameBox_MouseLeave(object sender, EventArgs e)
+        {
+            if (nameBox.Text == "")
+            {
+                nameBox.Text = "Username";
+            }
+        }
+
+        private void emailBox_MouseEnter(object sender, EventArgs e)
+        {
+            if (emailBox.Text == "Email")
+            {
+                emailBox.Text = "";
+            }
+        }
+
+        private void emailBox_MouseLeave(object sender, EventArgs e)
+        {
+            if (emailBox.Text == "")
+            {
+                emailBox.Text = "Email";
+            }
+        }
+
+        private void passwordBox_MouseEnter(object sender, EventArgs e)
+        {
+            if (passwordBox.Text == "Password")
+            {
+                passwordBox.Text = "";
+            }
+        }
+
+        private void passwordBox_MouseLeave(object sender, EventArgs e)
+        {
+            if (passwordBox.Text == "")
+            {
+                passwordBox.Text = "Password";
+            }
         }
     }
 }
