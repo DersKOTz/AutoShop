@@ -29,13 +29,13 @@ namespace AutoShop.List.Autoriz
             notifyIcon1.BalloonTipTitle = "AutoShop";
             notifyIcon1.BalloonTipText = notifyText;
             notifyIcon1.Visible = true;
-            notifyIcon1.ShowBalloonTip(3000);
+            notifyIcon1.ShowBalloonTip(1000);
         }
 
         private void registration_Click(object sender, EventArgs e)
         {
             string connectionString = "Data Source=LAPTOPVALAVIN-K\\SQLEXPRESS;Initial Catalog=AutoShop;Integrated Security=True;";
-            // Проверка, существует ли такой же username в базе данных
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -53,7 +53,6 @@ namespace AutoShop.List.Autoriz
                     }
                     else
                     {
-                        // Если такого username нет, продолжайте с добавлением записи в базу данных
                         string query = "INSERT INTO client (name, password, email) VALUES (@name, @password, @email)";
 
                         using (SqlCommand command = new SqlCommand(query, connection))

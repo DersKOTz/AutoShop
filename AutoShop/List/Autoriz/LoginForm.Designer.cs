@@ -106,7 +106,7 @@
             loginBtn.FillColor = Color.Empty;
             loginBtn.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             loginBtn.ForeColor = Color.White;
-            loginBtn.Location = new Point(86, 337);
+            loginBtn.Location = new Point(85, 340);
             loginBtn.Margin = new Padding(3, 2, 3, 2);
             loginBtn.Name = "loginBtn";
             loginBtn.ShadowDecoration.CustomizableEdges = customizableEdges15;
@@ -120,7 +120,7 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.Font = new Font("Segoe UI", 15F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(5, 238);
+            label2.Location = new Point(5, 241);
             label2.Name = "label2";
             label2.Size = new Size(378, 96);
             label2.TabIndex = 1;
@@ -133,7 +133,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 30F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(36, 178);
+            label1.Location = new Point(50, 181);
             label1.Name = "label1";
             label1.Size = new Size(288, 54);
             label1.TabIndex = 0;
@@ -160,7 +160,7 @@
             // 
             sverBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             sverBtn.Image = Properties.Resources.free_icon_minimize_video_9922060;
-            sverBtn.Location = new Point(647, 8);
+            sverBtn.Location = new Point(648, 8);
             sverBtn.Margin = new Padding(3, 2, 3, 2);
             sverBtn.Name = "sverBtn";
             sverBtn.Size = new Size(44, 38);
@@ -184,7 +184,7 @@
             // 
             // guna2Panel3
             // 
-            guna2Panel3.BackColor = Color.Transparent;
+            guna2Panel3.BackColor = Color.White;
             guna2Panel3.Controls.Add(passwordBox);
             guna2Panel3.Controls.Add(emailBox);
             guna2Panel3.Controls.Add(registrationBtn);
