@@ -63,9 +63,39 @@ namespace AutoShop.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_alloy_wheel_1000557 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-alloy-wheel-1000557", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_cancel_753345 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-cancel-753345", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_car_service_6420260 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-car-service-6420260", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_car_wash_2211425 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-car-wash-2211425", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +113,29 @@ namespace AutoShop.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_exit_603018 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-exit-603018", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_google_glass_logo_60786 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-google-glass-logo-60786", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_home_button_8370165 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-home-button-8370165", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +163,39 @@ namespace AutoShop.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_phone_call_126509 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-phone-call-126509", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_shopping_cart_481384 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-shopping-cart-481384", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_user_account_9372916 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-user-account-9372916", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_user_account_93729161 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-user-account-93729161", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

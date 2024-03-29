@@ -86,30 +86,6 @@ namespace AutoShop.List.Autoriz
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private bool isDragging = false;
-        private Point offset;
-        private void guna2Panel2_MouseDown(object sender, MouseEventArgs e)
-        {
-            isDragging = true;
-            offset = new Point(e.X, e.Y);
-        }
-
-        private void guna2Panel2_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isDragging)
-            {
-                Point newLocation = this.Location;
-                newLocation.X += e.X - offset.X;
-                newLocation.Y += e.Y - offset.Y;
-                this.Location = newLocation;
-            }
-        }
-
-        private void guna2Panel2_MouseUp(object sender, MouseEventArgs e)
-        {
-            isDragging = false;
-        }
-
         private void registrationBtn_Click(object sender, EventArgs e)
         {
             List.Autoriz.LoginForm login = new List.Autoriz.LoginForm();
@@ -147,6 +123,30 @@ namespace AutoShop.List.Autoriz
             {
                 passwordBox.Text = "Password";
             }
+        }
+
+        private bool isDragging = false;
+        private Point offset;
+        private void guna2Panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            isDragging = true;
+            offset = new Point(e.X, e.Y);
+        }
+
+        private void guna2Panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                Point newLocation = this.Location;
+                newLocation.X += e.X - offset.X;
+                newLocation.Y += e.Y - offset.Y;
+                this.Location = newLocation;
+            }
+        }
+
+        private void guna2Panel2_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDragging = false;
         }
     }
 }

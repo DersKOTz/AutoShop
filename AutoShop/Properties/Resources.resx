@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="free-icon-user-profile-10337197" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-icon-user-profile-10337197.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="free-icon-user-account-93729161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-user-account-93729161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="free-icon-email-envelope-12439139" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-icon-email-envelope-12439139.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="free-icon-car-wash-2211425" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-car-wash-2211425.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="free-icon-google-glass-logo-60786" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-google-glass-logo-60786.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,13 +130,37 @@
   <data name="free-icon-cancel-753345" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-cancel-753345.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="free-icon-user-account-9372916" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-icon-user-account-9372916.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="free-icon-shopping-cart-481384" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-shopping-cart-481384.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-alloy-wheel-1000557" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-alloy-wheel-1000557.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-user-profile-10337197" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-user-profile-10337197.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-email-envelope-12439139" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-email-envelope-12439139.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-phone-call-126509" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-phone-call-126509.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-home-button-8370165" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-home-button-8370165.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="free-icon-password-1000966" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-password-1000966.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="free-icon-car-service-6420260" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-car-service-6420260.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-user-account-9372916" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-user-account-9372916.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="free-icon-minimize-video-9922060" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-minimize-video-9922060.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-exit-603018" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-exit-603018.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
