@@ -63,6 +63,26 @@ namespace AutoShop.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap A220512_web_2880 {
+            get {
+                object obj = ResourceManager.GetObject("A220512_web_2880", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dwburnett_pcoty_roughs_6877_1642525990 {
+            get {
+                object obj = ResourceManager.GetObject("dwburnett-pcoty-roughs-6877-1642525990", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_alloy_wheel_1000557 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-alloy-wheel-1000557", resourceCulture);
@@ -103,6 +123,16 @@ namespace AutoShop.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_clock_time_7955852 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-clock-time-7955852", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_email_envelope_12439139 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-email-envelope-12439139", resourceCulture);
@@ -136,6 +166,16 @@ namespace AutoShop.Properties {
         internal static System.Drawing.Bitmap free_icon_home_button_8370165 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-home-button-8370165", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_location_5733320 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-location-5733320", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,6 +246,26 @@ namespace AutoShop.Properties {
         internal static System.Drawing.Bitmap free_icon_user_profile_10337197 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-user-profile-10337197", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lamborghini_Revuelto_Featured_Gear {
+            get {
+                object obj = ResourceManager.GetObject("Lamborghini-Revuelto-Featured-Gear", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
