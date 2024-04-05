@@ -1,4 +1,5 @@
 ﻿using AutoShop.DataSet1TableAdapters;
+using AutoShop.List.Content;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,8 @@ namespace AutoShop.List.items
 {
     public partial class itemAccessories : Form
     {
-        private int itemId;
+        public int itemId;
+
         public itemAccessories(string name, string price, string opis, byte[] picture, int id)
         {
             InitializeComponent();
@@ -25,13 +27,13 @@ namespace AutoShop.List.items
             {
                 pictureBox1.Image = Image.FromStream(ms);
             }
-            //MessageBox.Show(id.ToString());
             itemId = id;
         }
 
         private void buyBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(itemId.ToString());
+            Properties.Settings.Default.itemAcceOr = itemId;
+            Properties.Settings.Default.Save();
         }
     }
 }

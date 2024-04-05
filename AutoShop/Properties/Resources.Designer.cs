@@ -83,6 +83,16 @@ namespace AutoShop.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_add_circular_outlined_button_54443 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-add-circular-outlined-button-54443", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_alloy_wheel_1000557 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-alloy-wheel-1000557", resourceCulture);
@@ -186,6 +196,16 @@ namespace AutoShop.Properties {
         internal static System.Drawing.Bitmap free_icon_minimize_video_9922060 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-minimize-video-9922060", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_minimize_video_99220601 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-minimize-video-99220601", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

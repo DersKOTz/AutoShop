@@ -16,7 +16,10 @@ namespace AutoShop.List.Content
         public AccessoriesForm()
         {
             InitializeComponent();
+            Properties.Settings.Default.PropertyChanged += Settings_PropertyChanged;
         }
+
+        public List<int> itemIdList = new List<int>();
 
         private void AccessoriesForm_Load(object sender, EventArgs e)
         {
@@ -40,7 +43,43 @@ namespace AutoShop.List.Content
             }
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.VerticalScroll.Visible = false;
+        }
 
+        public void addOrder()
+        {
+            int newItem = Properties.Settings.Default.itemAcceOr;
+            if (!itemIdList.Contains(newItem))
+            {
+                itemIdList.Add(newItem);
+                foreach (int itemId in itemIdList)
+                {
+                    Properties.Settings.Default.idAcceOr += itemId.ToString() + ",";
+                }
+                Properties.Settings.Default.Save();
+            }
+            // Properties.Settings.Default.Reset();
+
+        }
+
+        private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "itemAcceOr")
+            {
+                addOrder();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // addOrder();
+            /*
+            string message = "Test: ";
+            foreach (int itemId in itemIdList)
+            {
+                message += itemId.ToString() + ",";
+            }
+            */
+            MessageBox.Show(Properties.Settings.Default.idAcceOr.ToString());
         }
     }
 }

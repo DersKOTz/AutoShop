@@ -30,8 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
-            flowLayoutPanel1 = new FlowLayoutPanel();
             tovarsTableAdapter1 = new DataSet1TableAdapters.tovarsTableAdapter();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            button1 = new Button();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -40,6 +41,10 @@
             guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             guna2BorderlessForm1.DragForm = false;
             guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // tovarsTableAdapter1
+            // 
+            tovarsTableAdapter1.ClearBeforeFill = true;
             // 
             // flowLayoutPanel1
             // 
@@ -50,9 +55,15 @@
             flowLayoutPanel1.Size = new Size(1116, 879);
             flowLayoutPanel1.TabIndex = 0;
             // 
-            // tovarsTableAdapter1
+            // button1
             // 
-            tovarsTableAdapter1.ClearBeforeFill = true;
+            button1.Location = new Point(117, 17);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 1;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // AccessoriesForm
             // 
@@ -60,6 +71,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1140, 956);
+            Controls.Add(button1);
             Controls.Add(flowLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AccessoriesForm";
@@ -71,7 +83,8 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private FlowLayoutPanel flowLayoutPanel1;
         private DataSet1TableAdapters.tovarsTableAdapter tovarsTableAdapter1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button button1;
     }
 }
