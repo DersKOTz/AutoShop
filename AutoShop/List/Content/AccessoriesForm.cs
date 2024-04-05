@@ -20,20 +20,27 @@ namespace AutoShop.List.Content
 
         private void AccessoriesForm_Load(object sender, EventArgs e)
         {
+            DataSet1 dataSet1 = new DataSet1();
+            tovarsTableAdapter1.Fill(dataSet1.tovars);
+            int countTovars = 0;
+            countTovars = (int)dataSet1.tovars.Rows.Count;
 
-            for (int i = 1; i <= 10; i++)
+            for (int i = 0; i < countTovars; i++)
             {
-                itemAccessories form = new itemAccessories();
+                itemAccessories form = new itemAccessories(
+                    dataSet1.tovars.Rows[i]["name"].ToString(),
+                    dataSet1.tovars.Rows[i]["price"].ToString(),
+                    dataSet1.tovars.Rows[i]["opis"].ToString(),
+                    (byte[])dataSet1.tovars.Rows[i]["picture"],
+                    Convert.ToInt32(dataSet1.tovars.Rows[i]["id"])
+                );
                 form.TopLevel = false;
                 flowLayoutPanel1.Controls.Add(form);
                 form.Show();
             }
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.VerticalScroll.Visible = false;
 
-        }
-
-        private void guna2vTrackBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-            
         }
     }
 }

@@ -36,14 +36,15 @@
             // 
             guna2BorderlessForm1.ContainerControl = this;
             guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            guna2BorderlessForm1.DragForm = false;
             guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // ordersForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.InactiveCaption;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.White;
+            ClientSize = new Size(1140, 956);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ordersForm";
             Text = "ordersForm";

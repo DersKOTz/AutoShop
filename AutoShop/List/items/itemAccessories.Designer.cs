@@ -48,6 +48,7 @@
             label3 = new Label();
             pictureBox1 = new PictureBox();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            tovarsTableAdapter1 = new DataSet1TableAdapters.tovarsTableAdapter();
             guna2Panel1.SuspendLayout();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -87,6 +88,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F);
             label1.Location = new Point(80, 18);
@@ -94,6 +96,7 @@
             label1.Size = new Size(154, 41);
             label1.TabIndex = 0;
             label1.Text = "Aventador";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // guna2Panel2
             // 
@@ -130,6 +133,7 @@
             buyBtn.Size = new Size(166, 56);
             buyBtn.TabIndex = 5;
             buyBtn.Text = "Заказать";
+            buyBtn.Click += buyBtn_Click;
             // 
             // label5
             // 
@@ -184,6 +188,10 @@
             guna2Panel3.Size = new Size(1075, 2);
             guna2Panel3.TabIndex = 3;
             // 
+            // tovarsTableAdapter1
+            // 
+            tovarsTableAdapter1.ClearBeforeFill = true;
+            // 
             // itemAccessories
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -218,5 +226,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton buyBtn;
         private Label label5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private DataSet1TableAdapters.tovarsTableAdapter tovarsTableAdapter1;
     }
 }
