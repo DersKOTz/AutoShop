@@ -28,6 +28,7 @@ namespace AutoShop.List.Content
             acceso();
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.VerticalScroll.Visible = false;
+
         }
 
         private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -38,7 +39,7 @@ namespace AutoShop.List.Content
             }
         }
 
-        public int count;
+
         private void acceso()
         {
             string idAcceOr = Properties.Settings.Default.idAcceOr;
@@ -64,12 +65,7 @@ namespace AutoShop.List.Content
                                 form.TopLevel = false;
                                 flowLayoutPanel1.Controls.Add(form);
                                 form.Show();
-
-                                string label4Text = form.Label4Text;
-                                if (int.TryParse(label4Text, out count))
-                                {
-                                    label2.Text = $"Товары: {count.ToString()} шт.";
-                                }
+                                ksk();
                                 break; // Выход из цикла, так как нужная запись уже найдена и загружена
                             }
                         }
@@ -78,11 +74,28 @@ namespace AutoShop.List.Content
             }
         }
 
-        public string countOrd
+        public void ksk()
         {
-            get { return count.ToString(); }
-        }
+            int sum = 0;
 
+            // Предполагается, что у вас есть список форм itemOrderscs
+            List<itemOrderscs> ordersFormsList = new List<itemOrderscs>();
+
+            // Проход по всем формам и получение их значений label4.Text
+            foreach (itemOrderscs form1 in ordersFormsList)
+            {
+                string sts = form1.label4.Text;
+                // Получение значения из label4.Text и преобразование его в число
+                if (int.TryParse(form1.label4.Text, out int value))
+                {
+                    // Добавление значения к общей сумме
+                    sum += value;
+                }
+            }
+
+            // Отображение суммы в label1.Text формы OrdersForm
+            label2.Text = sum.ToString();
+        }
         private void car()
         {
 

@@ -180,10 +180,10 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Label label5;
-        private Label label4;
         private Label label3;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        public Label label4;
     }
 }

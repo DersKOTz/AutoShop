@@ -30,6 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            serviceTableAdapter1 = new DataSet1TableAdapters.serviceTableAdapter();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -38,20 +40,37 @@
             guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // service
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
+            flowLayoutPanel1.Location = new Point(12, 65);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1116, 879);
+            flowLayoutPanel1.TabIndex = 1;
+            // 
+            // serviceTableAdapter1
+            // 
+            serviceTableAdapter1.ClearBeforeFill = true;
+            // 
+            // serviceForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.White;
+            ClientSize = new Size(1140, 956);
+            Controls.Add(flowLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "service";
+            Name = "serviceForm";
             Text = "service";
+            Load += serviceForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private DataSet1TableAdapters.serviceTableAdapter serviceTableAdapter1;
     }
 }

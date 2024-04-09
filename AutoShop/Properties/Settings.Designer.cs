@@ -58,5 +58,29 @@ namespace AutoShop.Properties {
                 this["ordersColvo"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string idServOr {
+            get {
+                return ((string)(this["idServOr"]));
+            }
+            set {
+                this["idServOr"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int itemServOr {
+            get {
+                return ((int)(this["itemServOr"]));
+            }
+            set {
+                this["itemServOr"] = value;
+            }
+        }
     }
 }

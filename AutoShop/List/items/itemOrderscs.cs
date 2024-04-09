@@ -11,11 +11,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
+
 namespace AutoShop.List.items
 {
     public partial class itemOrderscs : Form
     {
         private int itemId;
+
         public itemOrderscs(string name, string price, string opis, byte[] picture, int id)
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace AutoShop.List.items
             }
             //MessageBox.Show(id.ToString());
             itemId = id;
+
         }
 
         private void minusTov()
@@ -46,10 +49,6 @@ namespace AutoShop.List.items
                         if (itemId == itemId1) // Сравниваем с целым числом
                         {
                             found = true;
-                            // Выполнение действия, например, удаление элемента из массива
-                            // Тут важно отметить, что обычный массив не может быть изменен в размере после создания,
-                            // так что его нельзя просто вычесть.
-                            // Можно скопировать все элементы, кроме найденного, в новый массив, а затем снова преобразовать его в строку
                             string[] newArray = new string[idArray.Length - 1];
                             int newIndex = 0;
                             for (int j = 0; j < idArray.Length; j++)
@@ -69,46 +68,20 @@ namespace AutoShop.List.items
             }
         }
 
-        /*
-        private void Colvo()
-        {
-            string colLab = label4.Text;
-            int newColvo = int.Parse(colLab); // Получаем новое значение из строки
-            int currentColvo = Properties.Settings.Default.ordersColvo;
-            int updatedColvo = currentColvo + newColvo;
-            Properties.Settings.Default.ordersColvo = updatedColvo;
-            Properties.Settings.Default.Save();
 
-        }
-        */
 
-        public string Label4Text
-        {
-            get { return label4.Text; }
-        }
+        ordersForm form = new ordersForm();
 
         public void col()
         {
-            ordersForm form = new ordersForm();
-            string count = form.countOrd;
-
             int plus = Convert.ToInt32(label4.Text);
             int result = 0;
             result = plus + 1;
             label4.Text = (result).ToString();
-
-            int resu = result + int.Parse(count);
-
-            Properties.Settings.Default.ordersColvo = resu.ToString() + ",";
-            Properties.Settings.Default.Save();
-
-
-            MessageBox.Show(Properties.Settings.Default.ordersColvo);
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        public void colm()
         {
-            // -
             int minus = Convert.ToInt32(label4.Text);
             int result = 0;
             result = minus - 1;
@@ -121,6 +94,11 @@ namespace AutoShop.List.items
                 minusTov();
                 this.Hide();
             }
+        }
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            // -
+            colm();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
