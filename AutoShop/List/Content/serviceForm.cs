@@ -17,7 +17,10 @@ namespace AutoShop.List.Content
         public serviceForm()
         {
             InitializeComponent();
+            Properties.Settings.Default.PropertyChanged += Settings_PropertyChanged;
         }
+
+        public List<int> itemIdList = new List<int>();
 
         private void serviceForm_Load(object sender, EventArgs e)
         {
@@ -42,5 +45,34 @@ namespace AutoShop.List.Content
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.VerticalScroll.Visible = false;
         }
+
+        public void addOrder()
+        {
+            int newItem = Properties.Settings.Default.itemServOr;
+            if (!itemIdList.Contains(newItem))
+            {
+                itemIdList.Add(newItem);
+                foreach (int itemId in itemIdList)
+                {
+                    // Проверяем, содержится ли itemId уже в idAcceOr
+                    if (!Properties.Settings.Default.idServOr.Contains(itemId.ToString() + ","))
+                    {
+                        Properties.Settings.Default.idServOr += itemId.ToString() + ",";
+                    }
+                }
+                Properties.Settings.Default.Save();
+            }
+            // Properties.Settings.Default.Reset();
+
+        }
+
+        private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "itemServOr")
+            {
+                addOrder();
+            }
+        }
+
     }
 }

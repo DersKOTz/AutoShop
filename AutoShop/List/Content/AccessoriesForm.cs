@@ -1,4 +1,5 @@
 ﻿using AutoShop.List.items;
+using AutoShop.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace AutoShop.List.Content
         public AccessoriesForm()
         {
             InitializeComponent();
+            Properties.Settings.Default.PropertyChanged += Settings_PropertyChanged;
         }
 
         public List<int> itemIdList = new List<int>();
