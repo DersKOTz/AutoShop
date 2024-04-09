@@ -205,6 +205,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "itemAccessories";
             Text = "itemAccessories";
+            Load += itemAccessories_Load;
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             guna2Panel2.ResumeLayout(false);

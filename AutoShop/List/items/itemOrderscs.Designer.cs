@@ -50,6 +50,7 @@
             // 
             guna2BorderlessForm1.ContainerControl = this;
             guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            guna2BorderlessForm1.DragForm = false;
             guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // label2

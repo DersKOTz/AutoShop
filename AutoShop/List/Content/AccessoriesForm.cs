@@ -53,7 +53,11 @@ namespace AutoShop.List.Content
                 itemIdList.Add(newItem);
                 foreach (int itemId in itemIdList)
                 {
-                    Properties.Settings.Default.idAcceOr += itemId.ToString() + ",";
+                    // Проверяем, содержится ли itemId уже в idAcceOr
+                    if (!Properties.Settings.Default.idAcceOr.Contains(itemId.ToString() + ","))
+                    {
+                        Properties.Settings.Default.idAcceOr += itemId.ToString() + ",";
+                    }
                 }
                 Properties.Settings.Default.Save();
             }
@@ -71,14 +75,6 @@ namespace AutoShop.List.Content
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // addOrder();
-            /*
-            string message = "Test: ";
-            foreach (int itemId in itemIdList)
-            {
-                message += itemId.ToString() + ",";
-            }
-            */
             MessageBox.Show(Properties.Settings.Default.idAcceOr.ToString());
         }
     }

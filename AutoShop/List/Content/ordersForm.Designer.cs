@@ -101,9 +101,9 @@
             label2.Font = new Font("Segoe UI", 18F);
             label2.Location = new Point(830, 78);
             label2.Name = "label2";
-            label2.Size = new Size(122, 41);
+            label2.Size = new Size(129, 41);
             label2.TabIndex = 7;
-            label2.Text = "Товары";
+            label2.Text = "Товары:";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3

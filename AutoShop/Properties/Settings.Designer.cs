@@ -46,5 +46,17 @@ namespace AutoShop.Properties {
                 this["idAcceOr"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string ordersColvo {
+            get {
+                return ((string)(this["ordersColvo"]));
+            }
+            set {
+                this["ordersColvo"] = value;
+            }
+        }
     }
 }

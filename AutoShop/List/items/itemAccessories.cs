@@ -30,10 +30,41 @@ namespace AutoShop.List.items
             itemId = id;
         }
 
+        private void itemAccessories_Load(object sender, EventArgs e)
+        {
+            korz();
+        }
+
+        private void korz()
+        {
+            string idAcceOr = Properties.Settings.Default.idAcceOr;
+            string[] idArray = idAcceOr.Split(',');
+
+            foreach (string idStr in idArray)
+            {
+                if (!string.IsNullOrEmpty(idStr)) // Проверяем, что строка не пустая
+                {
+                    if (int.TryParse(idStr, out int itemId1)) // Пробуем преобразовать строку в число
+                    {
+                        if (itemId == itemId1) // Сравниваем с целым числом
+                        {
+                            buyBtn.Text = "В корзине";
+                        }
+                    }
+                }
+            }
+        }
+
         private void buyBtn_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.itemAcceOr = itemId;
             Properties.Settings.Default.Save();
+            if (buyBtn.Text == "Заказать")
+            {
+                korz();
+            }
         }
+
+
     }
 }
