@@ -1910,6 +1910,8 @@ namespace AutoShop {
             
             private global::System.Data.DataColumn columnamount;
             
+            private global::System.Data.DataColumn columnopis;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public carsDataTable() {
@@ -1993,6 +1995,14 @@ namespace AutoShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn opisColumn {
+                get {
+                    return this.columnopis;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2028,7 +2038,7 @@ namespace AutoShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public carsRow AddcarsRow(int id, string name, byte[] picture, string equipment_, string price, string amount) {
+            public carsRow AddcarsRow(int id, string name, byte[] picture, string equipment_, string price, string amount, string opis) {
                 carsRow rowcarsRow = ((carsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -2036,7 +2046,8 @@ namespace AutoShop {
                         picture,
                         equipment_,
                         price,
-                        amount};
+                        amount,
+                        opis};
                 rowcarsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcarsRow);
                 return rowcarsRow;
@@ -2065,6 +2076,7 @@ namespace AutoShop {
                 this.columnequipment_ = base.Columns["equipment "];
                 this.columnprice = base.Columns["price"];
                 this.columnamount = base.Columns["amount"];
+                this.columnopis = base.Columns["opis"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2082,10 +2094,14 @@ namespace AutoShop {
                 base.Columns.Add(this.columnprice);
                 this.columnamount = new global::System.Data.DataColumn("amount", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnamount);
+                this.columnopis = new global::System.Data.DataColumn("opis", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnopis);
+                this.columnid.AllowDBNull = false;
                 this.columnname.MaxLength = 2147483647;
                 this.columnequipment_.MaxLength = 2147483647;
                 this.columnprice.MaxLength = 2147483647;
                 this.columnamount.MaxLength = 2147483647;
+                this.columnopis.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3916,12 +3932,7 @@ namespace AutoShop {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int id {
                 get {
-                    try {
-                        return ((int)(this[this.tablecars.idColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'id\' в таблице \'cars\' равно DBNull.", e);
-                    }
+                    return ((int)(this[this.tablecars.idColumn]));
                 }
                 set {
                     this[this.tablecars.idColumn] = value;
@@ -4010,14 +4021,18 @@ namespace AutoShop {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsidNull() {
-                return this.IsNull(this.tablecars.idColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetidNull() {
-                this[this.tablecars.idColumn] = global::System.Convert.DBNull;
+            public string opis {
+                get {
+                    try {
+                        return ((string)(this[this.tablecars.opisColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'opis\' в таблице \'cars\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecars.opisColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4078,6 +4093,18 @@ namespace AutoShop {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetamountNull() {
                 this[this.tablecars.amountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsopisNull() {
+                return this.IsNull(this.tablecars.opisColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetopisNull() {
+                this[this.tablecars.opisColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6212,17 +6239,18 @@ namespace AutoShop.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("equipment ", "equipment ");
             tableMapping.ColumnMappings.Add("price", "price");
             tableMapping.ColumnMappings.Add("amount", "amount");
+            tableMapping.ColumnMappings.Add("opis", "opis");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[cars] ([id], [name], [picture], [equipment ], [price], [amount" +
-                "]) VALUES (@id, @name, @picture, @equipment_, @price, @amount)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[cars] ([name], [picture], [equipment ], [price], [opis], [amou" +
+                "nt]) VALUES (@name, @picture, @equipment_, @price, @opis, @amount)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@picture", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "picture", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@equipment_", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "equipment ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opis", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -6240,7 +6268,7 @@ namespace AutoShop.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, name, picture, [equipment ], price, amount FROM dbo.cars";
+            this._commandCollection[0].CommandText = "SELECT id, name, picture, [equipment ], price, opis, amount FROM dbo.cars";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6301,36 +6329,36 @@ namespace AutoShop.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> id, string name, byte[] picture, string equipment_, string price, string amount) {
-            if ((id.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id.Value));
-            }
-            else {
+        public virtual int Insert(string name, byte[] picture, string equipment_, string price, string opis, string amount) {
+            if ((name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((name == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(name));
+            }
+            if ((picture == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(name));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((byte[])(picture));
             }
-            if ((picture == null)) {
+            if ((equipment_ == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((byte[])(picture));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(equipment_));
             }
-            if ((equipment_ == null)) {
+            if ((price == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(equipment_));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(price));
             }
-            if ((price == null)) {
+            if ((opis == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(price));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(opis));
             }
             if ((amount == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;

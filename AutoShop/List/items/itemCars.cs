@@ -1,6 +1,4 @@
-﻿using AutoShop.DataSet1TableAdapters;
-using AutoShop.List.Content;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +10,10 @@ using System.Windows.Forms;
 
 namespace AutoShop.List.items
 {
-    public partial class itemAccessories : Form
+    public partial class itemCars : Form
     {
         public int itemId;
-
-        public itemAccessories(string name, string price, string opis, byte[] picture, int id)
+        public itemCars(string name, string price, string opis, byte[] picture, int id)
         {
             InitializeComponent();
 
@@ -30,16 +27,15 @@ namespace AutoShop.List.items
             itemId = id;
         }
 
-        private void itemAccessories_Load(object sender, EventArgs e)
+        private void itemCars_Load(object sender, EventArgs e)
         {
             korz();
         }
 
         private void korz()
         {
-            string idAcceOr = Properties.Settings.Default.idAcceOr;
+            string idAcceOr = Properties.Settings.Default.idCarOr;
             string[] idArray = idAcceOr.Split(',');
-
             foreach (string idStr in idArray)
             {
                 if (!string.IsNullOrEmpty(idStr)) // Проверяем, что строка не пустая
@@ -57,7 +53,7 @@ namespace AutoShop.List.items
 
         private void buyBtn_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.itemAcceOr = itemId;
+            Properties.Settings.Default.itemCarOr = itemId;
             Properties.Settings.Default.Save();
             if (buyBtn.Text == "Заказать")
             {

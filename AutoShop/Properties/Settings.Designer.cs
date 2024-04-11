@@ -94,5 +94,29 @@ namespace AutoShop.Properties {
                 this["username"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int itemCarOr {
+            get {
+                return ((int)(this["itemCarOr"]));
+            }
+            set {
+                this["itemCarOr"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string idCarOr {
+            get {
+                return ((string)(this["idCarOr"]));
+            }
+            set {
+                this["idCarOr"] = value;
+            }
+        }
     }
 }

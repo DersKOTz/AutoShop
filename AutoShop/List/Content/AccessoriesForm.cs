@@ -63,7 +63,6 @@ namespace AutoShop.List.Content
                 Properties.Settings.Default.Save();
             }
             // Properties.Settings.Default.Reset();
-
         }
 
         private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -72,11 +71,6 @@ namespace AutoShop.List.Content
             {
                 addOrder();
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(Properties.Settings.Default.idAcceOr.ToString());
         }
     }
 }

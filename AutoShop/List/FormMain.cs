@@ -99,7 +99,7 @@ namespace AutoShop.List
 
         private void carsBtn_Click(object sender, EventArgs e)
         {
-            OpenForm<List.Cars.BrandForm>();
+            OpenForm<List.Cars.CarListForm>();
         }
 
         private void acessBtn_Click(object sender, EventArgs e)
@@ -129,7 +129,7 @@ namespace AutoShop.List
 
         private void scrit()
         {
-            if (guna2Panel1.Width == 343)
+            if (guna2Panel1.Width == 300)
             {
                 guna2Panel1.Width = 112;
                 homeBtn.BorderThickness = 1;
@@ -143,7 +143,7 @@ namespace AutoShop.List
             }
             else
             {
-                guna2Panel1.Width = 343;
+                guna2Panel1.Width = 300;
                 homeBtn.BorderThickness = 0;
                 carsBtn.BorderThickness = 0;
                 acessBtn.BorderThickness = 0;
@@ -164,7 +164,7 @@ namespace AutoShop.List
         private void carsPic_Click(object sender, EventArgs e)
         {
             scrit();
-            OpenForm<List.Cars.BrandForm>();
+            OpenForm<List.Cars.CarListForm>();
         }
 
         private void acessPic_Click(object sender, EventArgs e)

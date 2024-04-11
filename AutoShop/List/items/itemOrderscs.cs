@@ -81,6 +81,10 @@ namespace AutoShop.List.items
             MinusTov(Properties.Settings.Default.idServOr, "idServOr");
         }
 
+        private void MinusTovCar()
+        {
+            MinusTov(Properties.Settings.Default.idCarOr, "idCarOr");
+        }
 
         ordersForm form = new ordersForm();
 
@@ -114,6 +118,7 @@ namespace AutoShop.List.items
             {
                 MinusTovServ();
                 MinusTovAcce();
+                MinusTovCar();
                 this.Hide();
             }
             Properties.Settings.Default.colvoMoney += 1;

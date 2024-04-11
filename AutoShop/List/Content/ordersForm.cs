@@ -20,6 +20,7 @@ namespace AutoShop.List.Content
         {
             InitializeComponent();
             Properties.Settings.Default.Save();
+
         }
 
         DataSet1 dataSet1 = new DataSet1();
@@ -28,6 +29,7 @@ namespace AutoShop.List.Content
         {
             acceso();
             service();
+            car();
             moneyAndColvo();
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.VerticalScroll.Visible = false;
@@ -58,7 +60,12 @@ namespace AutoShop.List.Content
                     int id = Convert.ToInt32(reader["id"]);
                     string name = reader["name"].ToString();
                     string price = reader["price"].ToString();
-                    string opis = reader["opis"].ToString();
+                    string opis = null;
+                    if (dataTable.Columns.Contains("opis"))
+                    {
+                        opis = reader["opis"].ToString();
+                    }
+
                     byte[] picture = (byte[])reader["picture"];
 
                     foreach (string idStr in idArray)
@@ -92,6 +99,14 @@ namespace AutoShop.List.Content
             FillData(idAcceOr, idArray, dataSet1.service);
         }
 
+        private void car()
+        {
+            string idAcceOr = Properties.Settings.Default.idCarOr;
+            string[] idArray = idAcceOr.Split(',');
+            carsTableAdapter1.Fill(dataSet1.cars);
+            FillData(idAcceOr, idArray, dataSet1.cars);
+        }
+
 
         public void moneyAndColvo()
         {
@@ -107,7 +122,7 @@ namespace AutoShop.List.Content
                 }
             }
             label2.Text = $"Товары: {totalMoney} шт. ";
-            label3.Text = $"Итого: {totalItems.ToString()} Р. ";
+            label3.Text = $"Итого: {totalItems} Р. ";
         }
 
         private void buyBtn_Click(object sender, EventArgs e)
