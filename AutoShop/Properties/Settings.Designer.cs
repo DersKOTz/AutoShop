@@ -50,9 +50,9 @@ namespace AutoShop.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public string ordersColvo {
+        public int ordersColvo {
             get {
-                return ((string)(this["ordersColvo"]));
+                return ((int)(this["ordersColvo"]));
             }
             set {
                 this["ordersColvo"] = value;

@@ -31,6 +31,7 @@ namespace AutoShop.List.items
             }
             //MessageBox.Show(id.ToString());
             itemId = id;
+            CountItemOrder = 1;
 
         }
 
@@ -71,13 +72,16 @@ namespace AutoShop.List.items
 
 
         ordersForm form = new ordersForm();
-
+        public int CountItemOrder;
         public void col()
         {
             int plus = Convert.ToInt32(label4.Text);
             int result = 0;
             result = plus + 1;
             label4.Text = (result).ToString();
+            CountItemOrder = result;
+            Properties.Settings.Default.ordersColvo += 1;
+            Properties.Settings.Default.Save();
         }
 
         public void colm()
@@ -88,13 +92,19 @@ namespace AutoShop.List.items
             if (result != 0)
             {
                 label4.Text = (result).ToString();
+                CountItemOrder = result;
+                Properties.Settings.Default.ordersColvo -= 1;
+                Properties.Settings.Default.Save();
             }
             else if (result == 0)
             {
+                Properties.Settings.Default.ordersColvo -= 1;
+                Properties.Settings.Default.Save();
                 minusTov();
                 this.Hide();
             }
         }
+
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             // -

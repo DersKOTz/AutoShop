@@ -15,10 +15,11 @@ namespace AutoShop.List.Content
 {
     public partial class ordersForm : Form
     {
+        public int totalCountItemOrder = 0;
         public ordersForm()
         {
             InitializeComponent();
-            Properties.Settings.Default.PropertyChanged += Settings_PropertyChanged;
+
         }
 
         DataSet1 dataSet1 = new DataSet1();
@@ -31,11 +32,12 @@ namespace AutoShop.List.Content
 
         }
 
-        private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+
+        private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e, itemOrderscs form)
         {
             if (e.PropertyName == "ordersColvo")
             {
-
+                ksk(form);
             }
         }
 
@@ -65,7 +67,20 @@ namespace AutoShop.List.Content
                                 form.TopLevel = false;
                                 flowLayoutPanel1.Controls.Add(form);
                                 form.Show();
-                                ksk();
+                                ksk(form);
+                                totalCountItemOrder += form.CountItemOrder;
+                                Properties.Settings.Default.ordersColvo = totalCountItemOrder;
+                                label2.Text = $"Товары: {Properties.Settings.Default.ordersColvo.ToString()} шт. ";
+
+                                Properties.Settings.Default.PropertyChanged += (sender, e) =>
+                                {
+                                    if (e.PropertyName == "ordersColvo")
+                                    {
+                                        Settings_PropertyChanged(sender, e, form);
+                                    }
+                                };
+
+
                                 break; // Выход из цикла, так как нужная запись уже найдена и загружена
                             }
                         }
@@ -74,28 +89,12 @@ namespace AutoShop.List.Content
             }
         }
 
-        public void ksk()
+        public int totalCount;
+        public void ksk(itemOrderscs form)
         {
-            int sum = 0;
-
-            // Предполагается, что у вас есть список форм itemOrderscs
-            List<itemOrderscs> ordersFormsList = new List<itemOrderscs>();
-
-            // Проход по всем формам и получение их значений label4.Text
-            foreach (itemOrderscs form1 in ordersFormsList)
-            {
-                string sts = form1.label4.Text;
-                // Получение значения из label4.Text и преобразование его в число
-                if (int.TryParse(form1.label4.Text, out int value))
-                {
-                    // Добавление значения к общей сумме
-                    sum += value;
-                }
-            }
-
-            // Отображение суммы в label1.Text формы OrdersForm
-            label2.Text = sum.ToString();
+            label2.Text = $"Товары: {Properties.Settings.Default.ordersColvo.ToString()} шт. ";
         }
+
         private void car()
         {
 
