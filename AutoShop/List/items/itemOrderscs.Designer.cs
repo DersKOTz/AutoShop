@@ -110,11 +110,11 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F);
-            label5.Location = new Point(455, 134);
+            label5.Location = new Point(470, 133);
             label5.Name = "label5";
-            label5.Size = new Size(70, 28);
+            label5.Size = new Size(45, 28);
             label5.TabIndex = 6;
-            label5.Text = "600 лс";
+            label5.Text = "600";
             // 
             // pictureBox2
             // 
@@ -171,6 +171,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "itemOrderscs";
             Text = "itemOrderscs";
+            Load += itemOrderscs_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -184,11 +185,11 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
-        private Label label5;
         private Label label3;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         public Label label4;
+        public Label label5;
     }
 }

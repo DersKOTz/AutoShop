@@ -15,11 +15,11 @@ namespace AutoShop.List.Content
 {
     public partial class ordersForm : Form
     {
-        public int totalCountItemOrder = 0;
+
         public ordersForm()
         {
             InitializeComponent();
-
+            Properties.Settings.Default.Save();
         }
 
         DataSet1 dataSet1 = new DataSet1();
@@ -28,122 +28,92 @@ namespace AutoShop.List.Content
         {
             acceso();
             service();
+            moneyAndColvo();
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.VerticalScroll.Visible = false;
 
+            Properties.Settings.Default.PropertyChanged += (sender, e) =>
+            {
+                if (e.PropertyName == "colvoMoney")
+                {
+                    Settings_PropertyChanged(sender, e);
+                }
+            };
         }
 
-
-        private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e, itemOrderscs form)
+        private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == "ordersColvo")
+            if (e.PropertyName == "colvoMoney")
             {
-                ksk(form);
+                moneyAndColvo();
             }
         }
 
-
-        private void acceso()
+        private void FillData(string idList, string[] idArray, DataTable dataTable)
         {
-            string idAcceOr = Properties.Settings.Default.idAcceOr;
-            string[] idArray = idAcceOr.Split(','); // Разделяем строку по запятым
-            tovarsTableAdapter1.Fill(dataSet1.tovars);
-            foreach (DataRow row in dataSet1.tovars.Rows)
+            using (DataTableReader reader = new DataTableReader(dataTable))
             {
-                int id = Convert.ToInt32(row["id"]);
-                string name = row["name"].ToString();
-                string price = row["price"].ToString();
-                string opis = row["opis"].ToString();
-                byte[] picture = (byte[])row["picture"];
-
-                foreach (string idStr in idArray)
+                while (reader.Read())
                 {
-                    if (!string.IsNullOrEmpty(idStr)) // Проверяем, что строка не пустая
+                    int id = Convert.ToInt32(reader["id"]);
+                    string name = reader["name"].ToString();
+                    string price = reader["price"].ToString();
+                    string opis = reader["opis"].ToString();
+                    byte[] picture = (byte[])reader["picture"];
+
+                    foreach (string idStr in idArray)
                     {
-                        if (int.TryParse(idStr, out int itemId)) // Пробуем преобразовать строку в число
+                        if (!string.IsNullOrEmpty(idStr) && int.TryParse(idStr, out int itemId) && id == itemId)
                         {
-                            if (id == itemId) // Сравниваем с целым числом
-                            {
-                                itemOrderscs form = new itemOrderscs(name, price, opis, picture, itemId);
-                                form.TopLevel = false;
-                                flowLayoutPanel1.Controls.Add(form);
-                                form.Show();
-                                ksk(form);
-                                totalCountItemOrder += form.CountItemOrder;
-                                Properties.Settings.Default.ordersColvo = totalCountItemOrder;
-                                label2.Text = $"Товары: {Properties.Settings.Default.ordersColvo.ToString()} шт. ";
-
-                                Properties.Settings.Default.PropertyChanged += (sender, e) =>
-                                {
-                                    if (e.PropertyName == "ordersColvo")
-                                    {
-                                        Settings_PropertyChanged(sender, e, form);
-                                    }
-                                };
-
-
-                                break; // Выход из цикла, так как нужная запись уже найдена и загружена
-                            }
+                            itemOrderscs form = new itemOrderscs(name, price, opis, picture, itemId);
+                            form.TopLevel = false;
+                            flowLayoutPanel1.Controls.Add(form);
+                            form.Show();
+                            break;
                         }
                     }
                 }
             }
+        }
+
+        private void acceso()
+        {
+            string idAcceOr = Properties.Settings.Default.idAcceOr;
+            string[] idArray = idAcceOr.Split(',');
+            tovarsTableAdapter1.Fill(dataSet1.tovars);
+            FillData(idAcceOr, idArray, dataSet1.tovars);
         }
 
         private void service()
         {
             string idAcceOr = Properties.Settings.Default.idServOr;
-            string[] idArray = idAcceOr.Split(','); // Разделяем строку по запятым
+            string[] idArray = idAcceOr.Split(',');
             serviceTableAdapter1.Fill(dataSet1.service);
-            foreach (DataRow row in dataSet1.service.Rows)
+            FillData(idAcceOr, idArray, dataSet1.service);
+        }
+
+
+        public void moneyAndColvo()
+        {
+            int totalItems = 0;
+            int totalMoney = 0;
+            foreach (Control control in flowLayoutPanel1.Controls)
             {
-                int id = Convert.ToInt32(row["id"]);
-                string name = row["name"].ToString();
-                string price = row["price"].ToString();
-                string opis = row["opis"].ToString();
-                byte[] picture = (byte[])row["picture"];
-
-                foreach (string idStr in idArray)
+                if (control is itemOrderscs)
                 {
-                    if (!string.IsNullOrEmpty(idStr)) // Проверяем, что строка не пустая
-                    {
-                        if (int.TryParse(idStr, out int itemId)) // Пробуем преобразовать строку в число
-                        {
-                            if (id == itemId) // Сравниваем с целым числом
-                            {
-                                itemOrderscs form = new itemOrderscs(name, price, opis, picture, itemId);
-                                form.TopLevel = false;
-                                flowLayoutPanel1.Controls.Add(form);
-                                form.Show();
-                                ksk(form);
-                                totalCountItemOrder += form.CountItemOrder;
-                                Properties.Settings.Default.ordersColvo = totalCountItemOrder;
-                                label2.Text = $"Товары: {Properties.Settings.Default.ordersColvo.ToString()} шт. ";
-
-                                Properties.Settings.Default.PropertyChanged += (sender, e) =>
-                                {
-                                    if (e.PropertyName == "ordersColvo")
-                                    {
-                                        Settings_PropertyChanged(sender, e, form);
-                                    }
-                                };
-
-
-                                break; // Выход из цикла, так как нужная запись уже найдена и загружена
-                            }
-                        }
-                    }
+                    itemOrderscs item = (itemOrderscs)control;
+                    totalItems += int.Parse(item.label5.Text);
+                    totalMoney += int.Parse(item.label4.Text);
                 }
             }
+            label2.Text = $"Товары: {totalMoney} шт. ";
+            label3.Text = $"Итого: {totalItems.ToString()} Р. ";
         }
 
-        public int totalCount;
-        public void ksk(itemOrderscs form)
+        private void buyBtn_Click(object sender, EventArgs e)
         {
-            label2.Text = $"Товары: {Properties.Settings.Default.ordersColvo.ToString()} шт. ";
+
         }
-
-
     }
 }
 

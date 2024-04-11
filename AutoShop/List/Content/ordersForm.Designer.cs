@@ -56,9 +56,10 @@
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
-            flowLayoutPanel1.Location = new Point(12, 78);
+            flowLayoutPanel1.Location = new Point(10, 58);
+            flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(802, 866);
+            flowLayoutPanel1.Size = new Size(702, 650);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // label1
@@ -66,9 +67,9 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F);
-            label1.Location = new Point(12, 18);
+            label1.Location = new Point(10, 14);
             label1.Name = "label1";
-            label1.Size = new Size(133, 41);
+            label1.Size = new Size(107, 32);
             label1.TabIndex = 2;
             label1.Text = "Корзина";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -87,21 +88,23 @@
             buyBtn.FillColor2 = Color.FromArgb(79, 187, 164);
             buyBtn.Font = new Font("Segoe UI", 14F);
             buyBtn.ForeColor = Color.White;
-            buyBtn.Location = new Point(846, 215);
+            buyBtn.Location = new Point(740, 161);
+            buyBtn.Margin = new Padding(3, 2, 3, 2);
             buyBtn.Name = "buyBtn";
             buyBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            buyBtn.Size = new Size(229, 56);
+            buyBtn.Size = new Size(200, 42);
             buyBtn.TabIndex = 6;
             buyBtn.Text = "Оформить заказ";
+            buyBtn.Click += buyBtn_Click;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F);
-            label2.Location = new Point(830, 78);
+            label2.Location = new Point(726, 58);
             label2.Name = "label2";
-            label2.Size = new Size(129, 41);
+            label2.Size = new Size(102, 32);
             label2.TabIndex = 7;
             label2.Text = "Товары:";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -111,9 +114,9 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13F);
-            label3.Location = new Point(830, 150);
+            label3.Location = new Point(726, 112);
             label3.Name = "label3";
-            label3.Size = new Size(83, 30);
+            label3.Size = new Size(70, 25);
             label3.TabIndex = 8;
             label3.Text = "Итого: ";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -144,16 +147,17 @@
             // 
             // ordersForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1140, 956);
+            ClientSize = new Size(998, 717);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(buyBtn);
             Controls.Add(label1);
             Controls.Add(flowLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ordersForm";
             Text = "ordersForm";
             Load += ordersForm_Load;
