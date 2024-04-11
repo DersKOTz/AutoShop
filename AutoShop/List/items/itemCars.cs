@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoShop.List.Cars;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -54,6 +55,7 @@ namespace AutoShop.List.items
         private void buyBtn_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.itemCarOr = itemId;
+            Properties.Settings.Default.car = itemId;
             Properties.Settings.Default.Save();
             if (buyBtn.Text == "Заказать")
             {

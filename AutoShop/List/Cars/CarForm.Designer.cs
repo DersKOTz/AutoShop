@@ -40,11 +40,12 @@
             // 
             // CarForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(998, 717);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "CarForm";
             Text = "CarForm";
             ResumeLayout(false);

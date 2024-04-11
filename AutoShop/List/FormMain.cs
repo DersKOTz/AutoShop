@@ -17,6 +17,7 @@ namespace AutoShop.List
         public FormMain()
         {
             InitializeComponent();
+            Properties.Settings.Default.PropertyChanged += Settings_PropertyChanged;
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -81,6 +82,15 @@ namespace AutoShop.List
                 }
             }
         }
+
+        private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "car")
+            {
+                OpenForm<List.Cars.CarForm>();
+            }
+        }
+
 
         public void OpenForm<T>() where T : Form, new()
         {

@@ -118,5 +118,17 @@ namespace AutoShop.Properties {
                 this["idCarOr"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int car {
+            get {
+                return ((int)(this["car"]));
+            }
+            set {
+                this["car"] = value;
+            }
+        }
     }
 }
