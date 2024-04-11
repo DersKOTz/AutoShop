@@ -35,7 +35,7 @@ namespace AutoShop.List.items
 
         }
 
-        private void minusTov()
+        private void minusTovAcce()
         {
             string idAcceOr = Properties.Settings.Default.idAcceOr;
             string[] idArray = idAcceOr.Split(',');
@@ -69,7 +69,39 @@ namespace AutoShop.List.items
             }
         }
 
+        private void minusTovServ()
+        {
+            string idAcceOr = Properties.Settings.Default.idServOr;
+            string[] idArray = idAcceOr.Split(',');
+            bool found = false;
 
+            for (int i = 0; i < idArray.Length; i++)
+            {
+                if (!string.IsNullOrEmpty(idArray[i])) // Проверяем, что строка не пустая
+                {
+                    if (int.TryParse(idArray[i], out int itemId1)) // Пробуем преобразовать строку в число
+                    {
+                        if (itemId == itemId1) // Сравниваем с целым числом
+                        {
+                            found = true;
+                            string[] newArray = new string[idArray.Length - 1];
+                            int newIndex = 0;
+                            for (int j = 0; j < idArray.Length; j++)
+                            {
+                                if (j != i)
+                                {
+                                    newArray[newIndex] = idArray[j];
+                                    newIndex++;
+                                }
+                            }
+                            Properties.Settings.Default.idServOr = string.Join(",", newArray);
+                            Properties.Settings.Default.Save();
+                            break;
+                        }
+                    }
+                }
+            }
+        }
 
         ordersForm form = new ordersForm();
         public int CountItemOrder;
@@ -100,7 +132,8 @@ namespace AutoShop.List.items
             {
                 Properties.Settings.Default.ordersColvo -= 1;
                 Properties.Settings.Default.Save();
-                minusTov();
+                minusTovServ();
+                minusTovAcce();
                 this.Hide();
             }
         }
