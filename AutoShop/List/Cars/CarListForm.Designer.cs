@@ -32,6 +32,7 @@
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             flowLayoutPanel1 = new FlowLayoutPanel();
             carsTableAdapter1 = new DataSet1TableAdapters.carsTableAdapter();
+            equipmentTableAdapter1 = new DataSet1TableAdapters.equipmentTableAdapter();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -45,25 +46,27 @@
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
-            flowLayoutPanel1.Location = new Point(12, 46);
-            flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanel1.Location = new Point(14, 61);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(977, 660);
+            flowLayoutPanel1.Size = new Size(1116, 879);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // carsTableAdapter1
             // 
             carsTableAdapter1.ClearBeforeFill = true;
             // 
+            // equipmentTableAdapter1
+            // 
+            equipmentTableAdapter1.ClearBeforeFill = true;
+            // 
             // CarListForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(998, 717);
+            ClientSize = new Size(1141, 956);
             Controls.Add(flowLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "CarListForm";
             Text = "CarListForm";
             Load += CarListForm_Load;
@@ -75,5 +78,6 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private FlowLayoutPanel flowLayoutPanel1;
         private DataSet1TableAdapters.carsTableAdapter carsTableAdapter1;
+        private DataSet1TableAdapters.equipmentTableAdapter equipmentTableAdapter1;
     }
 }

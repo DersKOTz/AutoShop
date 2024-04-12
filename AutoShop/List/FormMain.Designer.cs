@@ -131,6 +131,8 @@
             pictureBox2 = new PictureBox();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             content = new Guna.UI2.WinForms.Guna2Panel();
+            carsTableAdapter1 = new DataSet1TableAdapters.carsTableAdapter();
+            equipmentTableAdapter1 = new DataSet1TableAdapters.equipmentTableAdapter();
             guna2Panel1.SuspendLayout();
             guna2Panel5.SuspendLayout();
             guna2Panel22.SuspendLayout();
@@ -716,6 +718,14 @@
             content.Size = new Size(1140, 956);
             content.TabIndex = 6;
             // 
+            // carsTableAdapter1
+            // 
+            carsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // equipmentTableAdapter1
+            // 
+            equipmentTableAdapter1.ClearBeforeFill = true;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -797,5 +807,7 @@
         private PictureBox homePic;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel content;
+        private DataSet1TableAdapters.carsTableAdapter carsTableAdapter1;
+        private DataSet1TableAdapters.equipmentTableAdapter equipmentTableAdapter1;
     }
 }

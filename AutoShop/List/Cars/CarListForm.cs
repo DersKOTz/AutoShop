@@ -28,15 +28,22 @@ namespace AutoShop.List.Cars
             int countcars = 0;
             countcars = (int)dataSet1.cars.Rows.Count;
 
+            equipmentTableAdapter1.Fill(dataSet1.equipment);
             for (int i = 0; i < countcars; i++)
             {
                 itemCars form = new itemCars(
                     dataSet1.cars.Rows[i]["name"].ToString(),
                     dataSet1.cars.Rows[i]["price"].ToString(),
-                    dataSet1.cars.Rows[i]["opis"].ToString(),
+                    dataSet1.cars.Rows[i]["brand"].ToString(),
                     (byte[])dataSet1.cars.Rows[i]["picture"],
-                    Convert.ToInt32(dataSet1.cars.Rows[i]["id"])
+                    Convert.ToInt32(dataSet1.cars.Rows[i]["id"]),
+
+                    dataSet1.equipment.Rows[i]["maxSpeed"].ToString(),
+                    dataSet1.equipment.Rows[i]["do100Speed"].ToString(),
+                    dataSet1.equipment.Rows[i]["power"].ToString()
                 );
+
+
                 form.TopLevel = false;
                 flowLayoutPanel1.Controls.Add(form);
                 form.Show();

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AutoShop.DataSet1TableAdapters;
+using AutoShop.List.Cars;
+using AutoShop.List.items;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -87,7 +90,48 @@ namespace AutoShop.List
         {
             if (e.PropertyName == "car")
             {
-                OpenForm<List.Cars.CarForm>();
+                menuClose();
+
+                DataSet1 dataSet1 = new DataSet1();
+                carsTableAdapter1.Fill(dataSet1.cars);
+                equipmentTableAdapter1.Fill(dataSet1.equipment);
+                string id = Properties.Settings.Default.car.ToString();
+
+                int countcars = 0;
+                countcars = (int)dataSet1.cars.Rows.Count;
+
+                for (int i = 0; i < countcars; i++)
+                {
+                    if (dataSet1.cars.Rows[i]["id"].ToString() == id)
+                    {
+                        CarForm form = new CarForm(
+                            dataSet1.cars.Rows[i]["name"].ToString(),
+                            dataSet1.cars.Rows[i]["price"].ToString(),
+                            dataSet1.cars.Rows[i]["brand"].ToString(),
+                            (byte[])dataSet1.cars.Rows[i]["picture"],
+                            Convert.ToInt32(dataSet1.cars.Rows[i]["id"]),
+
+                            dataSet1.equipment.Rows[i]["maxSpeed"].ToString(),
+                            dataSet1.equipment.Rows[i]["do100Speed"].ToString(),
+                            dataSet1.equipment.Rows[i]["power"].ToString(),
+
+                            dataSet1.equipment.Rows[i]["color"].ToString(),
+                            dataSet1.equipment.Rows[i]["wheel"].ToString(),
+                            dataSet1.equipment.Rows[i]["interior"].ToString(),
+                            dataSet1.equipment.Rows[i]["body"].ToString(),
+                            dataSet1.equipment.Rows[i]["engineFuel"].ToString(),
+                            dataSet1.equipment.Rows[i]["gearbox"].ToString(),
+                            dataSet1.equipment.Rows[i]["privod"].ToString()
+                        );
+
+                        form.TopLevel = false;
+                        form.Size = new Size(content.Width, content.Height);
+                        content.Controls.Add(form);
+                        form.Show();
+                    }
+                }
+
+
             }
         }
 

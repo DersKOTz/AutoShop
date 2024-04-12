@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="free-icon-add-circular-outlined-button-54443" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-add-circular-outlined-button-54443.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="free-icon-user-account-93729161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-user-account-93729161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,11 +133,14 @@
   <data name="free-icon-exit-603018" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-exit-603018.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="free-icon-location-5733320" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-location-5733320.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dwburnett-pcoty-roughs-6877-1642525990" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dwburnett-pcoty-roughs-6877-1642525990.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="free-icon-minimize-video-9922060" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-icon-minimize-video-9922060.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="free-icon-cancel-753345" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-cancel-753345.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,14 +148,17 @@
   <data name="free-icon-shopping-cart-481384" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-shopping-cart-481384.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="free-icon-sun-3073662" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-sun-3073662.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="free-icon-alloy-wheel-1000557" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-alloy-wheel-1000557.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="free-icon-location-5733320" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-icon-location-5733320.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Lamborghini-Revuelto-Featured-Gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lamborghini-Revuelto-Featured-Gear.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-minimize-video-99220601" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-minimize-video-99220601.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="free-icon-home-button-8370165" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-home-button-8370165.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,9 +175,6 @@
   <data name="A220512_web_2880" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\A220512_web_2880.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="free-icon-minimize-video-99220601" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-icon-minimize-video-99220601.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="free-icon-user-account-9372916" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-user-account-9372916.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,13 +187,16 @@
   <data name="free-icon-clock-time-7955852" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\free-icon-clock-time-7955852.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="free-icon-add-circular-outlined-button-54443" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-icon-add-circular-outlined-button-54443.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lamborghini-Revuelto-Featured-Gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lamborghini-Revuelto-Featured-Gear.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="free-icon-minimize-video-9922060" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-minimize-video-9922060.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="free-icon-snowflake-2530005" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-snowflake-2530005.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="free-icon-sun-5032665" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-sun-5032665.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -14,13 +14,17 @@ namespace AutoShop.List.items
     public partial class itemCars : Form
     {
         public int itemId;
-        public itemCars(string name, string price, string opis, byte[] picture, int id)
+        public itemCars(string name, string price, string brand, byte[] picture, int id, string maxSpeed, string do100Speed, string power)
         {
             InitializeComponent();
 
             label1.Text = name;
+            label2.Text = brand;
             label3.Text = price;
-            label2.Text = opis;
+            label6.Text = $"0-100 км/ч\r\n{do100Speed} сек";
+            label7.Text = $"{maxSpeed} км/ч\r\nмакс";
+            label8.Text = $"{power} ЛС";
+
             using (MemoryStream ms = new MemoryStream(picture))
             {
                 pictureBox1.Image = Image.FromStream(ms);

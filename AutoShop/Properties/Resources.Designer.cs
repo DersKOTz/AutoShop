@@ -243,6 +243,36 @@ namespace AutoShop.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_snowflake_2530005 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-snowflake-2530005", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_sun_3073662 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-sun-3073662", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_sun_5032665 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-sun-5032665", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_user_account_9372916 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-user-account-9372916", resourceCulture);
