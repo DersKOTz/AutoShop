@@ -50,7 +50,7 @@ namespace AutoShop.List.Cars
 
         private void CarForm_Load(object sender, EventArgs e)
         {
-
+            korz();
         }
 
         private void colorBody()
@@ -137,19 +137,205 @@ namespace AutoShop.List.Cars
             string[] wheelSet = wheel1.Split(',');
             for (int i = 0; i < wheelSet.Length; i++)
             {
-                switch (i)
+                if (wheelSet[i] == "Зима") // Compare individual element of wheelSet
                 {
-                    case 0:
-                        guna2CircleButton6.Visible = true;
-                        break;
-                    case 1:
-                        guna2CircleButton7.Visible = true;
-                        break;
-                    case 2:
-                        guna2CircleButton8.Visible = true;
-                        break;
+                    guna2CircleButton6.Visible = true;
+                }
+                else if (wheelSet[i] == " Лето") // Compare individual element of wheelSet
+                {
+                    guna2CircleButton7.Visible = true;
+                }
+                else if (wheelSet[i] == " Всесезон") // Compare individual element of wheelSet
+                {
+                    guna2CircleButton8.Visible = true;
                 }
             }
+        }
+
+        private void korz()
+        {
+            string idAcceOr = Properties.Settings.Default.idCarOr;
+            string[] idArray = idAcceOr.Split(',');
+            foreach (string idStr in idArray)
+            {
+                if (!string.IsNullOrEmpty(idStr)) // Проверяем, что строка не пустая
+                {
+                    if (int.TryParse(idStr, out int itemId1)) // Пробуем преобразовать строку в число
+                    {
+                        if (itemId == itemId1) // Сравниваем с целым числом
+                        {
+                            buyBtn.Text = "В корзине";
+
+                            if (label8.Text != "")
+                            {
+                                Properties.Settings.Default.opisCar = $"Номер авто: {itemId}\n" +
+                                $"{label1.Text}\n" +
+                                $"Кузов {label8.Text}\n" +
+                                $"Двигатель {label9.Text}\n" +
+                                $"Привод {label11.Text}\n" +
+                                $"КПП {label10.Text}\n" +
+                                $"Цвет {Properties.Settings.Default.colorCar}\n" +
+                                $"Шины {Properties.Settings.Default.wheelCar}\n" +
+                                $"Интерьер {Properties.Settings.Default.colorInterierCar}\n";
+                                Properties.Settings.Default.Save();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void buyBtn_Click(object sender, EventArgs e)
+        {
+            if (buyBtn.Text == "Заказать")
+            {
+                Properties.Settings.Default.itemCarOr = itemId;
+                Properties.Settings.Default.car = itemId;
+                Properties.Settings.Default.Save();
+                korz();
+
+
+            }
+
+        }
+
+
+
+
+        public void colorBtn(Guna.UI2.WinForms.Guna2CircleButton btn)
+        {
+            Color borderColor = Color.FromArgb(195, 195, 195);
+            int borderThickness = 1;
+
+            foreach (var button in new[] { guna2CircleButton1, guna2CircleButton2, guna2CircleButton3, guna2CircleButton4, guna2CircleButton5 })
+            {
+                button.BorderColor = borderColor;
+                button.BorderThickness = borderThickness;
+            }
+            btn.BorderColor = Color.Black;
+            btn.BorderThickness = 2;
+        }
+
+        // color
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.colorCar = guna2CircleButton1.FillColor;
+            Properties.Settings.Default.Save();
+            colorBtn(guna2CircleButton1);
+
+        }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.colorCar = guna2CircleButton2.FillColor;
+            Properties.Settings.Default.Save();
+            colorBtn(guna2CircleButton2);
+        }
+
+        private void guna2CircleButton3_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.colorCar = guna2CircleButton3.FillColor;
+            Properties.Settings.Default.Save();
+            colorBtn(guna2CircleButton3);
+        }
+
+        private void guna2CircleButton4_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.colorCar = guna2CircleButton4.FillColor;
+            Properties.Settings.Default.Save();
+            colorBtn(guna2CircleButton4);
+        }
+
+        private void guna2CircleButton5_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.colorCar = guna2CircleButton5.FillColor;
+            Properties.Settings.Default.Save();
+            colorBtn(guna2CircleButton5);
+        }
+
+        public void wheelBtn(Guna.UI2.WinForms.Guna2CircleButton btn)
+        {
+            Color borderColor = Color.FromArgb(195, 195, 195);
+            int borderThickness = 1;
+
+            foreach (var button in new[] { guna2CircleButton6, guna2CircleButton7, guna2CircleButton8 })
+            {
+                button.BorderColor = borderColor;
+                button.BorderThickness = borderThickness;
+            }
+            btn.BorderColor = Color.Black;
+            btn.BorderThickness = 2;
+        }
+
+        // wheel
+        private void guna2CircleButton6_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.wheelCar = "Зима";
+            Properties.Settings.Default.Save();
+            wheelBtn(guna2CircleButton6);
+        }
+
+        private void guna2CircleButton7_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.wheelCar = "Лето";
+            Properties.Settings.Default.Save();
+            wheelBtn(guna2CircleButton7);
+        }
+
+        private void guna2CircleButton8_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.wheelCar = "Всесезон";
+            Properties.Settings.Default.Save();
+            wheelBtn(guna2CircleButton8);
+        }
+
+        public void colorInterierBtn(Guna.UI2.WinForms.Guna2CircleButton btn)
+        {
+            Color borderColor = Color.FromArgb(195, 195, 195);
+            int borderThickness = 1;
+
+            foreach (var button in new[] { guna2CircleButton9, guna2CircleButton10, guna2CircleButton11, guna2CircleButton12, guna2CircleButton13 })
+            {
+                button.BorderColor = borderColor;
+                button.BorderThickness = borderThickness;
+            }
+            btn.BorderColor = Color.Black;
+            btn.BorderThickness = 2;
+        }
+        // interier
+        private void guna2CircleButton9_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.colorInterierCar = guna2CircleButton9.FillColor;
+            Properties.Settings.Default.Save();
+            colorInterierBtn(guna2CircleButton9);
+        }
+
+        private void guna2CircleButton10_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.colorInterierCar = guna2CircleButton10.FillColor;
+            Properties.Settings.Default.Save();
+            colorInterierBtn(guna2CircleButton10);
+        }
+
+        private void guna2CircleButton11_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.colorInterierCar = guna2CircleButton11.FillColor;
+            Properties.Settings.Default.Save();
+            colorInterierBtn(guna2CircleButton11);
+        }
+
+        private void guna2CircleButton12_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.colorInterierCar = guna2CircleButton12.FillColor;
+            Properties.Settings.Default.Save();
+            colorInterierBtn(guna2CircleButton12);
+        }
+
+        private void guna2CircleButton13_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.colorInterierCar = guna2CircleButton13.FillColor;
+            Properties.Settings.Default.Save();
+            colorInterierBtn(guna2CircleButton13);
         }
     }
 

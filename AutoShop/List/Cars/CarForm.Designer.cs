@@ -267,10 +267,10 @@
             // label12
             // 
             label12.Font = new Font("Segoe UI", 16F);
-            label12.Location = new Point(213, 630);
+            label12.Location = new Point(52, 630);
             label12.Margin = new Padding(5);
             label12.Name = "label12";
-            label12.Size = new Size(173, 39);
+            label12.Size = new Size(504, 39);
             label12.TabIndex = 16;
             label12.Text = "Интерьер";
             label12.TextAlign = ContentAlignment.TopCenter;
@@ -278,10 +278,10 @@
             // label13
             // 
             label13.Font = new Font("Segoe UI", 16F);
-            label13.Location = new Point(213, 679);
+            label13.Location = new Point(52, 679);
             label13.Margin = new Padding(5);
             label13.Name = "label13";
-            label13.Size = new Size(173, 39);
+            label13.Size = new Size(504, 39);
             label13.TabIndex = 17;
             label13.Text = "В наличии";
             label13.TextAlign = ContentAlignment.TopCenter;
@@ -289,10 +289,10 @@
             // label14
             // 
             label14.Font = new Font("Segoe UI", 16F);
-            label14.Location = new Point(156, 728);
+            label14.Location = new Point(52, 728);
             label14.Margin = new Padding(5);
             label14.Name = "label14";
-            label14.Size = new Size(278, 88);
+            label14.Size = new Size(504, 88);
             label14.TabIndex = 18;
             label14.Text = "Доставим в любую \r\nточку мира";
             label14.TextAlign = ContentAlignment.TopCenter;
@@ -316,6 +316,7 @@
             buyBtn.Size = new Size(173, 56);
             buyBtn.TabIndex = 19;
             buyBtn.Text = "Заказать";
+            buyBtn.Click += buyBtn_Click;
             // 
             // equipmentTableAdapter1
             // 
@@ -378,6 +379,7 @@
             guna2CircleButton1.Size = new Size(66, 64);
             guna2CircleButton1.TabIndex = 26;
             guna2CircleButton1.Visible = false;
+            guna2CircleButton1.Click += guna2CircleButton1_Click;
             // 
             // guna2CircleButton2
             // 
@@ -396,6 +398,7 @@
             guna2CircleButton2.Size = new Size(66, 64);
             guna2CircleButton2.TabIndex = 27;
             guna2CircleButton2.Visible = false;
+            guna2CircleButton2.Click += guna2CircleButton2_Click;
             // 
             // guna2CircleButton3
             // 
@@ -414,6 +417,7 @@
             guna2CircleButton3.Size = new Size(66, 64);
             guna2CircleButton3.TabIndex = 28;
             guna2CircleButton3.Visible = false;
+            guna2CircleButton3.Click += guna2CircleButton3_Click;
             // 
             // guna2CircleButton4
             // 
@@ -432,6 +436,7 @@
             guna2CircleButton4.Size = new Size(66, 64);
             guna2CircleButton4.TabIndex = 29;
             guna2CircleButton4.Visible = false;
+            guna2CircleButton4.Click += guna2CircleButton4_Click;
             // 
             // guna2CircleButton5
             // 
@@ -450,6 +455,7 @@
             guna2CircleButton5.Size = new Size(66, 64);
             guna2CircleButton5.TabIndex = 30;
             guna2CircleButton5.Visible = false;
+            guna2CircleButton5.Click += guna2CircleButton5_Click;
             // 
             // guna2CircleButton6
             // 
@@ -471,6 +477,7 @@
             guna2CircleButton6.Size = new Size(66, 64);
             guna2CircleButton6.TabIndex = 33;
             guna2CircleButton6.Visible = false;
+            guna2CircleButton6.Click += guna2CircleButton6_Click;
             // 
             // guna2CircleButton7
             // 
@@ -492,6 +499,7 @@
             guna2CircleButton7.Size = new Size(66, 64);
             guna2CircleButton7.TabIndex = 32;
             guna2CircleButton7.Visible = false;
+            guna2CircleButton7.Click += guna2CircleButton7_Click;
             // 
             // guna2CircleButton8
             // 
@@ -513,6 +521,7 @@
             guna2CircleButton8.Size = new Size(66, 64);
             guna2CircleButton8.TabIndex = 31;
             guna2CircleButton8.Visible = false;
+            guna2CircleButton8.Click += guna2CircleButton8_Click;
             // 
             // guna2CircleButton9
             // 
@@ -531,6 +540,7 @@
             guna2CircleButton9.Size = new Size(66, 64);
             guna2CircleButton9.TabIndex = 34;
             guna2CircleButton9.Visible = false;
+            guna2CircleButton9.Click += guna2CircleButton9_Click;
             // 
             // guna2CircleButton10
             // 
@@ -549,6 +559,7 @@
             guna2CircleButton10.Size = new Size(66, 64);
             guna2CircleButton10.TabIndex = 35;
             guna2CircleButton10.Visible = false;
+            guna2CircleButton10.Click += guna2CircleButton10_Click;
             // 
             // guna2CircleButton11
             // 
@@ -567,6 +578,7 @@
             guna2CircleButton11.Size = new Size(66, 64);
             guna2CircleButton11.TabIndex = 36;
             guna2CircleButton11.Visible = false;
+            guna2CircleButton11.Click += guna2CircleButton11_Click;
             // 
             // guna2CircleButton12
             // 
@@ -585,6 +597,7 @@
             guna2CircleButton12.Size = new Size(66, 64);
             guna2CircleButton12.TabIndex = 37;
             guna2CircleButton12.Visible = false;
+            guna2CircleButton12.Click += guna2CircleButton12_Click;
             // 
             // guna2CircleButton13
             // 
@@ -603,6 +616,7 @@
             guna2CircleButton13.Size = new Size(66, 64);
             guna2CircleButton13.TabIndex = 38;
             guna2CircleButton13.Visible = false;
+            guna2CircleButton13.Click += guna2CircleButton13_Click;
             // 
             // CarForm
             // 

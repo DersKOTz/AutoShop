@@ -183,7 +183,7 @@ namespace AutoShop.List
 
         private void scrit()
         {
-            if (guna2Panel1.Width == 300)
+            if (guna2Panel1.Width == 343)
             {
                 guna2Panel1.Width = 112;
                 homeBtn.BorderThickness = 1;
@@ -197,7 +197,7 @@ namespace AutoShop.List
             }
             else
             {
-                guna2Panel1.Width = 300;
+                guna2Panel1.Width = 343;
                 homeBtn.BorderThickness = 0;
                 carsBtn.BorderThickness = 0;
                 acessBtn.BorderThickness = 0;
@@ -212,37 +212,37 @@ namespace AutoShop.List
         private void homePic_Click(object sender, EventArgs e)
         {
             scrit();
-            OpenForm<List.Content.HomeForm>();
+            //OpenForm<List.Content.HomeForm>();
         }
 
         private void carsPic_Click(object sender, EventArgs e)
         {
             scrit();
-            OpenForm<List.Cars.CarListForm>();
+            //OpenForm<List.Cars.CarListForm>();
         }
 
         private void acessPic_Click(object sender, EventArgs e)
         {
             scrit();
-            OpenForm<List.Content.AccessoriesForm>();
+            //OpenForm<List.Content.AccessoriesForm>();
         }
 
         private void servicePic_Click(object sender, EventArgs e)
         {
             scrit();
-            OpenForm<List.Content.serviceForm>();
+            //OpenForm<List.Content.serviceForm>();
         }
 
         private void ordersPic_Click(object sender, EventArgs e)
         {
             scrit();
-            OpenForm<List.Content.ordersForm>();
+            //OpenForm<List.Content.ordersForm>();
         }
 
         private void contactPic_Click(object sender, EventArgs e)
         {
             scrit();
-            OpenForm<List.Content.ContactsForm>();
+            //OpenForm<List.Content.ContactsForm>();
         }
 
         private void userPic_Click(object sender, EventArgs e)

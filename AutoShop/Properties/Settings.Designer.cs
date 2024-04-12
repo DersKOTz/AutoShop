@@ -130,5 +130,51 @@ namespace AutoShop.Properties {
                 this["car"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Color colorCar {
+            get {
+                return ((global::System.Drawing.Color)(this["colorCar"]));
+            }
+            set {
+                this["colorCar"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Color colorInterierCar {
+            get {
+                return ((global::System.Drawing.Color)(this["colorInterierCar"]));
+            }
+            set {
+                this["colorInterierCar"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string wheelCar {
+            get {
+                return ((string)(this["wheelCar"]));
+            }
+            set {
+                this["wheelCar"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string opisCar {
+            get {
+                return ((string)(this["opisCar"]));
+            }
+            set {
+                this["opisCar"] = value;
+            }
+        }
     }
 }

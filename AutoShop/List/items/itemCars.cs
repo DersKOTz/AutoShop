@@ -58,13 +58,8 @@ namespace AutoShop.List.items
 
         private void buyBtn_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.itemCarOr = itemId;
             Properties.Settings.Default.car = itemId;
             Properties.Settings.Default.Save();
-            if (buyBtn.Text == "Заказать")
-            {
-                korz();
-            }
         }
     }
 }

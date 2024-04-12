@@ -10,6 +10,8 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AutoShop.List.Content
 {
@@ -107,7 +109,6 @@ namespace AutoShop.List.Content
             FillData(idAcceOr, idArray, dataSet1.cars);
         }
 
-
         public void moneyAndColvo()
         {
             int totalItems = 0;
@@ -127,8 +128,14 @@ namespace AutoShop.List.Content
 
         private void buyBtn_Click(object sender, EventArgs e)
         {
-
+            kvitan();
         }
+
+        private void kvitan()
+        {
+           
+        }
+
     }
 }
 
