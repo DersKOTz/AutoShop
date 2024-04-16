@@ -43,6 +43,7 @@
             serviceTableAdapter1 = new DataSet1TableAdapters.serviceTableAdapter();
             carsTableAdapter1 = new DataSet1TableAdapters.carsTableAdapter();
             clientTableAdapter1 = new DataSet1TableAdapters.clientTableAdapter();
+            contactTableAdapter1 = new DataSet1TableAdapters.contactTableAdapter();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -145,6 +146,10 @@
             // 
             clientTableAdapter1.ClearBeforeFill = true;
             // 
+            // contactTableAdapter1
+            // 
+            contactTableAdapter1.ClearBeforeFill = true;
+            // 
             // ordersForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -179,5 +184,6 @@
         private DataSet1TableAdapters.serviceTableAdapter serviceTableAdapter1;
         private DataSet1TableAdapters.carsTableAdapter carsTableAdapter1;
         private DataSet1TableAdapters.clientTableAdapter clientTableAdapter1;
+        private DataSet1TableAdapters.contactTableAdapter contactTableAdapter1;
     }
 }

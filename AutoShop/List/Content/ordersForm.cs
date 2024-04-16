@@ -12,6 +12,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Globalization;
+using System.Windows.Forms.VisualStyles;
+
 
 namespace AutoShop.List.Content
 {
@@ -131,11 +135,158 @@ namespace AutoShop.List.Content
             kvitan();
         }
 
+
         private void kvitan()
         {
-           
+            contactTableAdapter1.Fill(dataSet1.contact);
+
+            string fileName = "AutoShopOrders.xlsx";
+            var date = DateOnly.FromDateTime(DateTime.Now);
+            string sheetName = $"{date}";
+            Excel.Application excelApp = new Excel.Application();
+            Excel.Workbook workbook = null;
+
+            try
+            {
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+
+                // Проверяем существует ли файл
+                if (!File.Exists(filePath))
+                {
+                    // Если файл не существует, создаем новый
+                    workbook = excelApp.Workbooks.Add();
+                    workbook.SaveAs(filePath);
+                }
+                else
+                {
+                    workbook = excelApp.Workbooks.Open(filePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при открытии файла: " + ex.Message);
+            }
+
+            if (workbook != null)
+            {
+                Excel.Worksheet worksheet = null;
+
+                // Проверяем существует ли лист "студенты"
+                bool studentsSheetExists = false;
+                foreach (Excel.Worksheet sheet in workbook.Sheets)
+                {
+                    if (sheet.Name == sheetName)
+                    {
+                        worksheet = sheet;
+                        studentsSheetExists = true;
+                        break;
+                    }
+                }
+
+                // Если лист "студенты" не существует, создаем его
+                if (!studentsSheetExists)
+                {
+                    worksheet = workbook.Sheets.Add();
+                    worksheet.Name = sheetName;
+                    workbook.Save(); // Сохраняем изменения в файле
+                }
+
+                if (worksheet != null)
+                {
+                    try
+                    {
+                        // Название 
+                        string nameOrg = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["nameOrg"].ToString();
+                        string innKpp = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["innKpp"].ToString();
+                        Excel.Range rangeNameOrg = worksheet.Range["B2:M2"];
+                        rangeNameOrg.Merge();
+                        rangeNameOrg.Value = $"Поставщик: {nameOrg}, ИНН/КПП {innKpp}";
+                        rangeNameOrg.Font.Size = 14;
+                        rangeNameOrg.Font.Bold = true;
+
+                        // Адресс и телефон
+                        string address = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["address"].ToString();
+                        string city = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["city"].ToString();
+                        string phone = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["phone"].ToString();
+                        string hourWork = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["hourWork"].ToString();
+                        string dayWork = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["dayWork"].ToString();
+                        string dayExit = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["dayExit"].ToString();
+                        Excel.Range rangeAdress = worksheet.Range["C3:K4"];
+                        rangeAdress.Merge();
+                        rangeAdress.Value = $"{city}, {address}, тел. {phone}. График работы {hourWork}, {dayWork}, выходной {dayExit}";
+                        rangeAdress.Font.Size = 11;
+                        rangeAdress.WrapText = true;
+
+                        // тов чек
+                        Excel.Range rangeCheck = worksheet.Range["B6:M6"];
+                        rangeCheck.Merge();
+                        rangeCheck.Value = $"Товарный чек № А-1 от {date}";
+                        rangeCheck.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                        rangeCheck.Font.Size = 14;
+                        rangeCheck.Font.Bold = true;
+
+                        // адресс получения
+                        Excel.Range rangeAdr = worksheet.Range["B8:M8"];
+                        rangeAdr.Merge();
+                        rangeAdr.Value = $"Адрес получения заказа: ";
+                        rangeAdr.Font.Size = 11;
+
+                        worksheet.Cells[10, 2].Value = "№";
+                        worksheet.Cells[10, 3].Value = "Код";
+                        Excel.Range rangeTov = worksheet.Range["D10:I10"];
+                        rangeTov.Merge();
+                        rangeTov.Value = "Наименование товара";
+                        worksheet.Cells[10, 10].Value = "Цена";
+                        worksheet.Cells[10, 11].Value = "Кол-во";
+                        worksheet.Cells[10, 12].Value = "Скидка";
+                        worksheet.Cells[10, 13].Value = "Сумма";
+
+                        Excel.Range rangeOth = worksheet.Range["B10:M10"];
+                        rangeOth.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                        rangeOth.Font.Bold = true;
+                    }
+                    catch
+                    {
+                        workbook.Save();
+                        workbook.Close();
+                        excelApp.Quit();
+
+                        System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                        System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+                    }
+
+                }
+
+                workbook.Save();
+                workbook.Close();
+                excelApp.Quit();
+
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+            }
         }
 
+        private void info()
+        {
+            if (dataSet1.contact.Rows.Count > 0)
+            {
+
+                string ogrn = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["ogrn"].ToString();
+                //label8.Text = $"ОГРН: {ogrn}";
+
+                string nameBank = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["nameBank"].ToString();
+                //label9.Text = $"Название банка: {nameBank}";
+
+                string rc = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["rc"].ToString();
+                //label10.Text = $"Расчетный счет: {rc}";
+
+                string kc = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["kc"].ToString();
+                //label11.Text = $"Кор. счет: {kc}";
+
+                string bic = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["bic"].ToString();
+                //label12.Text = $"БИК банка: {bic}";
+            }
+        }
     }
 }
 
