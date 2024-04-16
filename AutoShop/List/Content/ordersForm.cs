@@ -231,6 +231,7 @@ namespace AutoShop.List.Content
                         rangeAdr.Value = $"Адрес получения заказа: ";
                         rangeAdr.Font.Size = 11;
 
+                        // таблица шапка
                         worksheet.Cells[10, 2].Value = "№";
                         worksheet.Cells[10, 3].Value = "Код";
                         Excel.Range rangeTov = worksheet.Range["D10:I10"];
@@ -241,9 +242,50 @@ namespace AutoShop.List.Content
                         worksheet.Cells[10, 12].Value = "Скидка";
                         worksheet.Cells[10, 13].Value = "Сумма";
 
+                        // формат таблицы
                         Excel.Range rangeOth = worksheet.Range["B10:M10"];
                         rangeOth.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
                         rangeOth.Font.Bold = true;
+
+                        // вставка данных
+                        int row = 11;
+                        int number = 1;
+                        foreach (Control control in flowLayoutPanel1.Controls)
+                        {
+                            if (control is itemOrderscs)
+                            {
+                                itemOrderscs item = (itemOrderscs)control;
+
+                                // номер
+                                worksheet.Cells[row, 2].Value = number;
+
+                                // id
+                                worksheet.Cells[row, 3].Value = item.itemId;
+
+                                // имя
+                                Excel.Range rangeTovar = worksheet.Range[worksheet.Cells[row, 4], worksheet.Cells[row, 9]];
+                                rangeTovar.Merge();
+                                rangeTovar.Value = $"{item.label1.Text}. {item.label2.Text}.";
+
+                                // цена
+                                worksheet.Cells[row, 10].Value = int.Parse(item.label5.Text) / int.Parse(item.label4.Text);
+
+                                // кол-во
+                                worksheet.Cells[row, 11].Value = item.label4.Text;
+
+                                // скидка
+                                worksheet.Cells[row, 12].Value = "0%";
+
+                                // сумма
+                                worksheet.Cells[row, 13].Value = item.label5.Text;
+
+                                row++;
+                                number++;
+
+
+                            }
+                        }
+
                     }
                     catch
                     {

@@ -16,7 +16,7 @@ namespace AutoShop.List.items
 {
     public partial class itemOrderscs : Form
     {
-        private int itemId;
+        public int itemId;
         private int money;
         public itemOrderscs(string name, string price, string opis, byte[] picture, int id)
         {
