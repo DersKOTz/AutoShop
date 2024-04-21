@@ -127,7 +127,7 @@ namespace AutoShop.List.Content
                 }
             }
             label2.Text = $"Товары: {totalMoney} шт. ";
-            label3.Text = $"Итого: {totalItems} Р. ";
+            label3.Text = $"Итого: {totalItems} ₽";
         }
 
         private void buyBtn_Click(object sender, EventArgs e)
@@ -195,6 +195,9 @@ namespace AutoShop.List.Content
                 {
                     try
                     {
+                        worksheet.Cells.ClearContents();
+                        worksheet.Cells.ClearFormats();
+
                         // Название 
                         string nameOrg = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["nameOrg"].ToString();
                         string innKpp = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["innKpp"].ToString();
@@ -258,6 +261,7 @@ namespace AutoShop.List.Content
 
                                 // номер
                                 worksheet.Cells[row, 2].Value = number;
+                                number++;
 
                                 // id
                                 worksheet.Cells[row, 3].Value = item.itemId;
@@ -268,7 +272,7 @@ namespace AutoShop.List.Content
                                 rangeTovar.Value = $"{item.label1.Text}. {item.label2.Text}.";
 
                                 // цена
-                                worksheet.Cells[row, 10].Value = int.Parse(item.label5.Text) / int.Parse(item.label4.Text);
+                                worksheet.Cells[row, 10].Value = $"{int.Parse(item.label5.Text) / int.Parse(item.label4.Text)} ₽";
 
                                 // кол-во
                                 worksheet.Cells[row, 11].Value = item.label4.Text;
@@ -277,17 +281,94 @@ namespace AutoShop.List.Content
                                 worksheet.Cells[row, 12].Value = "0%";
 
                                 // сумма
-                                worksheet.Cells[row, 13].Value = item.label5.Text;
+                                worksheet.Cells[row, 13].Value = $"{item.label5.Text} ₽";
 
                                 row++;
-                                number++;
-
-
                             }
                         }
 
+                        // стоимость
+                        Excel.Range rangeStoim = worksheet.Range[worksheet.Cells[row, 2], worksheet.Cells[row, 10]];
+                        rangeStoim.Merge();
+                        rangeStoim.Value = $"Стоимость товаров с учетом скидки:";
+                        rangeStoim.Font.Bold = true;
+
+                        // cумма
+                        Excel.Range rangeSym = worksheet.Range[worksheet.Cells[row, 11], worksheet.Cells[row, 13]];
+                        rangeSym.Merge();
+                        string label3T = $"{label3.Text}"; // Ваше исходное значение
+                        string label3C = label3T.Substring(6);
+                        rangeSym.Value = $"{label3C}";
+                        rangeSym.Font.Bold = true;
+
+                        // наимен
+                        string label2T = $"{label2.Text}";
+                        string label2C = label2T.Substring(6);
+                        worksheet.Cells[row + 2, 2].Value = $"Всего наименований{label2C}На сумму{label3C}";
+                        worksheet.Cells[row + 2, 2].Font.Size = 13;
+
+                        // кассир
+                        worksheet.Cells[row + 3, 10].Value = "Кассир______________________________";
+
+                        // реквизиты
+                        worksheet.Cells[row + 4, 2].Value = "Реквизиты организации:";
+                        worksheet.Cells[row + 4, 2].Font.Bold = true;
+
+                        // название банка
+                        worksheet.Cells[row + 5, 2].Value = "Название банка: " + dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["nameBank"];
+
+                        // рс
+                        worksheet.Cells[row + 6, 2].Value = "Расчетный счет: " + dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["rc"];
+
+                        // кс
+                        worksheet.Cells[row + 7, 2].Value = "Кор. счет: " + dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["kc"];
+
+                        // бик
+                        worksheet.Cells[row + 8, 2].Value = "БИК банка: " + dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["bic"];
+
+                        // претензии
+                        worksheet.Cells[row + 10, 2].Value = "Претензий к товару не имею, с договором ознакомлен______________________";
+
+
+                        // форматирование
+                        Excel.Range range1 = worksheet.Range[worksheet.Cells[11, 2], worksheet.Cells[row - 1, 3]];
+                        range1.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                        Excel.Range range2 = worksheet.Range[worksheet.Cells[11, 10], worksheet.Cells[row - 1, 13]];
+                        range2.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                        Excel.Range range3 = worksheet.Range[worksheet.Cells[row, 2], worksheet.Cells[row, 13]];
+                        range3.HorizontalAlignment = Excel.XlHAlign.xlHAlignRight;
+                        worksheet.Cells[row - 1, 2].Font.Italic = true;
+
+                        Excel.Range rangeRama = worksheet.Range[worksheet.Cells[10, 2], worksheet.Cells[row, 13]];
+                        rangeRama.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                        rangeRama.Borders.Weight = Excel.XlBorderWeight.xlThin;
+
+
+                        // печать и тд
+                        Excel.Range rangePrint = worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[row + 11, 14]];
+                        worksheet.PageSetup.PrintArea = rangePrint.Address;
+
+                        worksheet.PageSetup.LeftMargin = excelApp.InchesToPoints(0.5);
+                        worksheet.PageSetup.RightMargin = excelApp.InchesToPoints(0.5);
+                        worksheet.PageSetup.TopMargin = excelApp.InchesToPoints(0.5);
+                        worksheet.PageSetup.BottomMargin = excelApp.InchesToPoints(0.5);
+
+                        worksheet.PageSetup.Zoom = false;
+                        worksheet.PageSetup.FitToPagesWide = 1;
+                        worksheet.PageSetup.FitToPagesTall = 1;
+
+
+                        workbook.Save();
+                        workbook.Close();
+                        excelApp.Quit();
+
+                        System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                        System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+                        MessageBox.Show("Усп");
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         workbook.Save();
                         workbook.Close();
@@ -295,40 +376,14 @@ namespace AutoShop.List.Content
 
                         System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                         System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+                        MessageBox.Show(ex.ToString());
                     }
 
                 }
 
-                workbook.Save();
-                workbook.Close();
-                excelApp.Quit();
-
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
             }
         }
 
-        private void info()
-        {
-            if (dataSet1.contact.Rows.Count > 0)
-            {
-
-                string ogrn = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["ogrn"].ToString();
-                //label8.Text = $"ОГРН: {ogrn}";
-
-                string nameBank = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["nameBank"].ToString();
-                //label9.Text = $"Название банка: {nameBank}";
-
-                string rc = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["rc"].ToString();
-                //label10.Text = $"Расчетный счет: {rc}";
-
-                string kc = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["kc"].ToString();
-                //label11.Text = $"Кор. счет: {kc}";
-
-                string bic = dataSet1.contact.Rows[dataSet1.contact.Rows.Count - 1]["bic"].ToString();
-                //label12.Text = $"БИК банка: {bic}";
-            }
-        }
     }
 }
 
