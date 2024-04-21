@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -10,6 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Data.SQLite;
+using Microsoft.Office.Interop.Excel;
 
 
 namespace AutoShop.List.items
@@ -18,20 +22,25 @@ namespace AutoShop.List.items
     {
         public int itemId;
         private int money;
-        public itemOrderscs(string name, string price, string opis, byte[] picture, int id)
+        public itemOrderscs(string name, string price, string opis, byte[] picture, int id, string brand, string dopCar)
         {
             InitializeComponent();
 
-            label1.Text = name;
+            label1.Text = $"{brand} {name}";
             label5.Text = price;
-            label2.Text = opis;
+            label2.Text = opis + dopCar;
+            itemId = id;
+            money = int.Parse(label5.Text);
+
+
+
+
             using (MemoryStream ms = new MemoryStream(picture))
             {
                 pictureBox1.Image = Image.FromStream(ms);
             }
-            itemId = id;
-            money = int.Parse(label5.Text);
         }
+
 
         private void itemOrderscs_Load(object sender, EventArgs e)
         {
@@ -97,7 +106,7 @@ namespace AutoShop.List.items
 
             int price = 0;
             price = int.Parse(label5.Text) + money;
-            label5.Text = (price).ToString();
+            label5.Text = $"{(price).ToString()}";
 
             Properties.Settings.Default.colvoMoney += 1;
             Properties.Settings.Default.Save();
@@ -108,7 +117,7 @@ namespace AutoShop.List.items
             int minus = Convert.ToInt32(label4.Text);
             int result = 0;
             result = minus - 1;
-            label5.Text = (int.Parse(label5.Text) - money).ToString();
+            label5.Text = $"{(int.Parse(label5.Text) - money).ToString()}";
 
             if (result != 0)
             {

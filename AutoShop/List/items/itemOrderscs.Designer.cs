@@ -54,25 +54,23 @@
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14F);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(230, 50);
             label2.Name = "label2";
-            label2.Size = new Size(66, 25);
+            label2.Size = new Size(204, 121);
             label2.TabIndex = 1;
             label2.Text = "600 лс";
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F);
             label1.Location = new Point(230, 9);
             label1.Name = "label1";
-            label1.Size = new Size(124, 32);
+            label1.Size = new Size(422, 32);
             label1.TabIndex = 0;
             label1.Text = "Aventador";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
@@ -87,28 +85,28 @@
             // 
             // label4
             // 
-            label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15F);
-            label4.Location = new Point(480, 91);
+            label4.Location = new Point(507, 89);
             label4.Name = "label4";
-            label4.Size = new Size(23, 28);
+            label4.Size = new Size(65, 28);
             label4.TabIndex = 5;
             label4.Text = "1";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
-            label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F);
-            label5.Location = new Point(470, 133);
+            label5.Location = new Point(412, 133);
             label5.Name = "label5";
-            label5.Size = new Size(45, 28);
+            label5.Size = new Size(252, 28);
             label5.TabIndex = 6;
             label5.Text = "600";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.free_icon_add_circular_outlined_button_54443;
-            pictureBox2.Location = new Point(534, 92);
+            pictureBox2.Location = new Point(578, 90);
             pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(33, 28);
@@ -120,7 +118,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.free_icon_minimize_video_99220601;
-            pictureBox3.Location = new Point(422, 90);
+            pictureBox3.Location = new Point(466, 88);
             pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(35, 30);
@@ -164,7 +162,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

@@ -70,30 +70,30 @@
             guna2Panel1.Controls.Add(label2);
             guna2Panel1.Controls.Add(label1);
             guna2Panel1.CustomizableEdges = customizableEdges7;
-            guna2Panel1.Location = new Point(35, 33);
+            guna2Panel1.Location = new Point(31, 25);
+            guna2Panel1.Margin = new Padding(3, 2, 3, 2);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Panel1.Size = new Size(315, 292);
+            guna2Panel1.Size = new Size(276, 219);
             guna2Panel1.TabIndex = 0;
             // 
             // label2
             // 
-            label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F);
-            label2.Location = new Point(115, 98);
+            label2.Location = new Point(3, 65);
             label2.Name = "label2";
-            label2.Size = new Size(84, 32);
+            label2.Size = new Size(270, 141);
             label2.TabIndex = 1;
             label2.Text = "600 лс";
+            label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F);
-            label1.Location = new Point(80, 18);
+            label1.Location = new Point(3, 14);
             label1.Name = "label1";
-            label1.Size = new Size(154, 41);
+            label1.Size = new Size(270, 32);
             label1.TabIndex = 0;
             label1.Text = "Aventador";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -108,10 +108,11 @@
             guna2Panel2.Controls.Add(label4);
             guna2Panel2.Controls.Add(label3);
             guna2Panel2.CustomizableEdges = customizableEdges5;
-            guna2Panel2.Location = new Point(751, 12);
+            guna2Panel2.Location = new Point(657, 9);
+            guna2Panel2.Margin = new Padding(3, 2, 3, 2);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Panel2.Size = new Size(323, 348);
+            guna2Panel2.Size = new Size(283, 261);
             guna2Panel2.TabIndex = 1;
             // 
             // buyBtn
@@ -127,10 +128,11 @@
             buyBtn.FillColor2 = Color.FromArgb(79, 187, 164);
             buyBtn.Font = new Font("Segoe UI", 14F);
             buyBtn.ForeColor = Color.White;
-            buyBtn.Location = new Point(78, 240);
+            buyBtn.Location = new Point(68, 180);
+            buyBtn.Margin = new Padding(3, 2, 3, 2);
             buyBtn.Name = "buyBtn";
             buyBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            buyBtn.Size = new Size(166, 56);
+            buyBtn.Size = new Size(145, 42);
             buyBtn.TabIndex = 5;
             buyBtn.Text = "Заказать";
             buyBtn.Click += buyBtn_Click;
@@ -139,9 +141,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 16F);
-            label5.Location = new Point(35, 128);
+            label5.Location = new Point(37, 88);
             label5.Name = "label5";
-            label5.Size = new Size(253, 74);
+            label5.Size = new Size(207, 60);
             label5.TabIndex = 4;
             label5.Text = "Доставим в любую\r\nточку мира";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -150,28 +152,29 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 18F);
-            label4.Location = new Point(82, 74);
+            label4.Location = new Point(72, 56);
             label4.Name = "label4";
-            label4.Size = new Size(159, 41);
+            label4.Size = new Size(130, 32);
             label4.TabIndex = 3;
             label4.Text = "В наличии";
             // 
             // label3
             // 
-            label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 18F);
-            label3.Location = new Point(96, 22);
+            label3.Location = new Point(3, 16);
             label3.Name = "label3";
-            label3.Size = new Size(130, 41);
+            label3.Size = new Size(277, 40);
             label3.TabIndex = 2;
             label3.Text = "54 500 ₽";
+            label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.dwburnett_pcoty_roughs_6877_1642525990;
-            pictureBox1.Location = new Point(356, 12);
+            pictureBox1.Location = new Point(312, 9);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(389, 344);
+            pictureBox1.Size = new Size(340, 258);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
@@ -182,10 +185,11 @@
             guna2Panel3.BorderColor = Color.Black;
             guna2Panel3.CustomizableEdges = customizableEdges1;
             guna2Panel3.Dock = DockStyle.Bottom;
-            guna2Panel3.Location = new Point(0, 375);
+            guna2Panel3.Location = new Point(0, 281);
+            guna2Panel3.Margin = new Padding(3, 2, 3, 2);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel3.Size = new Size(1075, 2);
+            guna2Panel3.Size = new Size(941, 2);
             guna2Panel3.TabIndex = 3;
             // 
             // tovarsTableAdapter1
@@ -194,20 +198,20 @@
             // 
             // itemAccessories
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1075, 377);
+            ClientSize = new Size(941, 283);
             Controls.Add(guna2Panel3);
             Controls.Add(pictureBox1);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "itemAccessories";
             Text = "itemAccessories";
             Load += itemAccessories_Load;
             guna2Panel1.ResumeLayout(false);
-            guna2Panel1.PerformLayout();
             guna2Panel2.ResumeLayout(false);
             guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

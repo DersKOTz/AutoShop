@@ -15,6 +15,7 @@ using static System.Net.Mime.MediaTypeNames;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Globalization;
 using System.Windows.Forms.VisualStyles;
+using System.Data.SQLite;
 
 
 namespace AutoShop.List.Content
@@ -65,12 +66,21 @@ namespace AutoShop.List.Content
                 {
                     int id = Convert.ToInt32(reader["id"]);
                     string name = reader["name"].ToString();
+                    string brand = null;
+                    if (dataTable.Columns.Contains("brand"))
+                    {
+                        brand = reader["brand"].ToString();
+                    }
+
                     string price = reader["price"].ToString();
                     string opis = null;
+
                     if (dataTable.Columns.Contains("opis"))
                     {
                         opis = reader["opis"].ToString();
                     }
+
+
 
                     byte[] picture = (byte[])reader["picture"];
 
@@ -78,7 +88,39 @@ namespace AutoShop.List.Content
                     {
                         if (!string.IsNullOrEmpty(idStr) && int.TryParse(idStr, out int itemId) && id == itemId)
                         {
-                            itemOrderscs form = new itemOrderscs(name, price, opis, picture, itemId);
+                            string dopCar = null;
+                            string fullName = $"{brand} {name}";
+
+                            string connectionString = "Data Source=MyDatabase.db;Version=3;";
+                            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                            {
+                                connection.Open();
+
+                                // SQL-запрос для выбора данных из столбца Color таблицы Cars
+                                string sql = "SELECT Name, Color, Wheels, Interior FROM Cars;"; // Добавляем Name в запрос
+
+                                using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                                {
+                                    using (SQLiteDataReader mreader = command.ExecuteReader())
+                                    {
+                                        // Обработка результата запроса
+                                        while (mreader.Read())
+                                        {
+                                            string carName = mreader["Name"].ToString(); // Получаем значение столбца Name
+
+                                            // Проверяем, равны ли значения fullName и carName
+                                            if (fullName == carName)
+                                            {
+                                                dopCar = $"Цвет: {mreader["Color"].ToString()}. Резина: {mreader["Wheels"].ToString()}. Интерьер: {mreader["Interior"].ToString()}.";
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+
+
+                            itemOrderscs form = new itemOrderscs(name, price, opis, picture, itemId, brand, dopCar);
                             form.TopLevel = false;
                             flowLayoutPanel1.Controls.Add(form);
                             form.Show();
@@ -88,6 +130,8 @@ namespace AutoShop.List.Content
                 }
             }
         }
+
+
 
         private void acceso()
         {
@@ -133,6 +177,7 @@ namespace AutoShop.List.Content
         private void buyBtn_Click(object sender, EventArgs e)
         {
             kvitan();
+
         }
 
 

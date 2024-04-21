@@ -59,38 +59,38 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F);
-            label1.Location = new Point(358, 22);
+            label1.Location = new Point(313, 16);
             label1.Name = "label1";
-            label1.Size = new Size(186, 41);
+            label1.Size = new Size(150, 32);
             label1.TabIndex = 0;
             label1.Text = "Ремонт КПП";
             // 
             // label2
             // 
-            label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F);
-            label2.Location = new Point(358, 86);
+            label2.Location = new Point(313, 64);
             label2.Name = "label2";
-            label2.Size = new Size(99, 128);
+            label2.Size = new Size(335, 210);
             label2.TabIndex = 1;
             label2.Text = "Полное\r\nа\r\nб\r\nв";
             // 
             // label3
             // 
-            label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 16F);
-            label3.Location = new Point(847, 81);
+            label3.Location = new Point(666, 61);
             label3.Name = "label3";
-            label3.Size = new Size(121, 37);
+            label3.Size = new Size(263, 39);
             label3.TabIndex = 2;
             label3.Text = "50 000 ₽";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.image;
-            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Location = new Point(10, 9);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(324, 353);
+            pictureBox1.Size = new Size(284, 265);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -100,10 +100,11 @@
             guna2Panel1.BackColor = Color.FromArgb(195, 195, 195);
             guna2Panel1.CustomizableEdges = customizableEdges3;
             guna2Panel1.Dock = DockStyle.Bottom;
-            guna2Panel1.Location = new Point(0, 375);
+            guna2Panel1.Location = new Point(0, 281);
+            guna2Panel1.Margin = new Padding(3, 2, 3, 2);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel1.Size = new Size(1075, 2);
+            guna2Panel1.Size = new Size(941, 2);
             guna2Panel1.TabIndex = 4;
             // 
             // buyBtn
@@ -119,31 +120,31 @@
             buyBtn.FillColor2 = Color.FromArgb(79, 187, 164);
             buyBtn.Font = new Font("Segoe UI", 14F);
             buyBtn.ForeColor = Color.White;
-            buyBtn.Location = new Point(827, 235);
+            buyBtn.Location = new Point(724, 176);
+            buyBtn.Margin = new Padding(3, 2, 3, 2);
             buyBtn.Name = "buyBtn";
             buyBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            buyBtn.Size = new Size(166, 56);
+            buyBtn.Size = new Size(145, 42);
             buyBtn.TabIndex = 8;
             buyBtn.Text = "Заказать";
             buyBtn.Click += buyBtn_Click;
             // 
             // label5
             // 
-            label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F);
-            label5.Location = new Point(808, 133);
+            label5.Location = new Point(666, 100);
             label5.Name = "label5";
-            label5.Size = new Size(202, 84);
+            label5.Size = new Size(263, 63);
             label5.TabIndex = 7;
             label5.Text = "После заказа с вами \r\nсвяжутся и уточнять \r\nмодель авто и цену";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // itemService
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1075, 377);
+            ClientSize = new Size(941, 283);
             Controls.Add(buyBtn);
             Controls.Add(label5);
             Controls.Add(guna2Panel1);
@@ -152,6 +153,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "itemService";
             Text = "itemService";
             Load += itemService_Load;

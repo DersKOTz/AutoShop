@@ -101,26 +101,24 @@
             // label2
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F);
             label2.Location = new Point(726, 58);
             label2.Name = "label2";
-            label2.Size = new Size(102, 32);
+            label2.Size = new Size(260, 32);
             label2.TabIndex = 7;
             label2.Text = "Товары:";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13F);
             label3.Location = new Point(726, 112);
             label3.Name = "label3";
-            label3.Size = new Size(70, 25);
+            label3.Size = new Size(260, 25);
             label3.TabIndex = 8;
             label3.Text = "Итого: ";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // tovarsTableAdapter1
             // 

@@ -168,16 +168,8 @@ namespace AutoShop.List.Cars
 
                             if (label8.Text != "")
                             {
-                                Properties.Settings.Default.opisCar = $"Номер авто: {itemId}\n" +
-                                $"{label1.Text}\n" +
-                                $"Кузов {label8.Text}\n" +
-                                $"Двигатель {label9.Text}\n" +
-                                $"Привод {label11.Text}\n" +
-                                $"КПП {label10.Text}\n" +
-                                $"Цвет {Properties.Settings.Default.colorCar}\n" +
-                                $"Шины {Properties.Settings.Default.wheelCar}\n" +
-                                $"Интерьер {Properties.Settings.Default.colorInterierCar}\n";
-                                Properties.Settings.Default.Save();
+                                CarDatabase database = new CarDatabase("Data Source=MyDatabase.db;Version=3;");
+                                database.SaveCar(itemId.ToString(), label1.Text, Properties.Settings.Default.colorCar.Name, Properties.Settings.Default.wheelCar, Properties.Settings.Default.colorInterierCar.Name);
                             }
                         }
                     }
@@ -193,8 +185,6 @@ namespace AutoShop.List.Cars
                 Properties.Settings.Default.car = itemId;
                 Properties.Settings.Default.Save();
                 korz();
-
-
             }
 
         }

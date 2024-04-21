@@ -1,3 +1,7 @@
-INSERT INTO tovars(picture)
-SELECT BulkColumn
-FROM OPENROWSET(BULK 'C:\Users\valav\Downloads\Icons\Lamborghini-Revuelto-Featured-Gear.jpg', SINGLE_BLOB) AS ImageData;
+INSERT INTO cars (picture, name, price, amount, brand)
+SELECT 
+    (SELECT BulkColumn FROM OPENROWSET(BULK 'C:\\Users\\valav\\Downloads\\Icons\\Lamborghini-Revuelto-Featured-Gear.jpg', SINGLE_BLOB) AS ImageData),
+    'Aventador', -- Замените на реальное название товара
+    '40 000 000',            -- Замените на реальную цену
+    '10',                -- Замените на реальное количество
+    'Lamborghini';     -- Замените на реальный бренд
