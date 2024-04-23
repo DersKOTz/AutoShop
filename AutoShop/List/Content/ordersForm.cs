@@ -71,44 +71,31 @@ namespace AutoShop.List.Content
                     {
                         brand = reader["brand"].ToString();
                     }
-
                     string price = reader["price"].ToString();
                     string opis = null;
-
                     if (dataTable.Columns.Contains("opis"))
                     {
                         opis = reader["opis"].ToString();
                     }
-
-
-
                     byte[] picture = (byte[])reader["picture"];
-
                     foreach (string idStr in idArray)
                     {
                         if (!string.IsNullOrEmpty(idStr) && int.TryParse(idStr, out int itemId) && id == itemId)
                         {
                             string dopCar = null;
                             string fullName = $"{brand} {name}";
-
                             string connectionString = "Data Source=MyDatabase.db;Version=3;";
                             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
                             {
                                 connection.Open();
-
-                                // SQL-запрос для выбора данных из столбца Color таблицы Cars
                                 string sql = "SELECT Name, Color, Wheels, Interior FROM Cars;"; // Добавляем Name в запрос
-
                                 using (SQLiteCommand command = new SQLiteCommand(sql, connection))
                                 {
                                     using (SQLiteDataReader mreader = command.ExecuteReader())
                                     {
-                                        // Обработка результата запроса
                                         while (mreader.Read())
                                         {
                                             string carName = mreader["Name"].ToString(); // Получаем значение столбца Name
-
-                                            // Проверяем, равны ли значения fullName и carName
                                             if (fullName == carName)
                                             {
                                                 dopCar = $"Цвет: {mreader["Color"].ToString()}. Резина: {mreader["Wheels"].ToString()}. Интерьер: {mreader["Interior"].ToString()}.";
@@ -117,9 +104,6 @@ namespace AutoShop.List.Content
                                     }
                                 }
                             }
-
-
-
                             itemOrderscs form = new itemOrderscs(name, price, opis, picture, itemId, brand, dopCar);
                             form.TopLevel = false;
                             flowLayoutPanel1.Controls.Add(form);

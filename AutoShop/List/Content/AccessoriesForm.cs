@@ -54,7 +54,6 @@ namespace AutoShop.List.Content
                 itemIdList.Add(newItem);
                 foreach (int itemId in itemIdList)
                 {
-                    // Проверяем, содержится ли itemId уже в idAcceOr
                     if (!Properties.Settings.Default.idAcceOr.Contains(itemId.ToString() + ","))
                     {
                         Properties.Settings.Default.idAcceOr += itemId.ToString() + ",";
@@ -62,7 +61,6 @@ namespace AutoShop.List.Content
                 }
                 Properties.Settings.Default.Save();
             }
-            // Properties.Settings.Default.Reset();
         }
 
         private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)

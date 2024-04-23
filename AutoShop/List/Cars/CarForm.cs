@@ -169,7 +169,8 @@ namespace AutoShop.List.Cars
                             if (label8.Text != "")
                             {
                                 CarDatabase database = new CarDatabase("Data Source=MyDatabase.db;Version=3;");
-                                database.SaveCar(itemId.ToString(), label1.Text, Properties.Settings.Default.colorCar.Name, Properties.Settings.Default.wheelCar, Properties.Settings.Default.colorInterierCar.Name);
+                                database.SaveCar(itemId.ToString(), label1.Text, Properties.Settings.Default.colorCar.Name,
+                                    Properties.Settings.Default.wheelCar, Properties.Settings.Default.colorInterierCar.Name);
                             }
                         }
                     }

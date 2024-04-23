@@ -73,19 +73,6 @@ namespace AutoShop.List
             isDragging = false;
         }
 
-
-        private void menuClose()
-        {
-            foreach (Control control in content.Controls)
-            {
-                if (control is Form form)
-                {
-                    form.Close();
-                    break;
-                }
-            }
-        }
-
         private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "car")
@@ -135,6 +122,17 @@ namespace AutoShop.List
             }
         }
 
+        private void menuClose()
+        {
+            foreach (Control control in content.Controls)
+            {
+                if (control is Form form)
+                {
+                    form.Close();
+                    break;
+                }
+            }
+        }
 
         public void OpenForm<T>() where T : Form, new()
         {
